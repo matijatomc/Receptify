@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Receptify.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Receptify.Views"
+    Title="Receptify">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:MainPage}"
+        Route="MainPage" />
+
+    <TabBar>
+        <ShellContent Title="Početna" ContentTemplate="{DataTemplate views:MainPage}" />
+        <ShellContent Title="Dodaj recept" ContentTemplate="{DataTemplate views:AddRecipePage}" />
+        <ShellContent Title="Svi recepti" ContentTemplate="{DataTemplate views:RecipeListPage}" />
+    </TabBar>
+
+
+</Shell>
