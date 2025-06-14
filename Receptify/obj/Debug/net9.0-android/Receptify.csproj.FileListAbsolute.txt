@@ -949,3 +949,7 @@ C:\Users\Matija Tomc\source\repos\Receptify\Receptify\obj\Debug\net9.0-android\s
 C:\Users\Matija Tomc\source\repos\Receptify\Receptify\obj\Debug\net9.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\Matija Tomc\source\repos\Receptify\Receptify\obj\Debug\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Matija Tomc\source\repos\Receptify\Receptify\obj\Debug\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\Matija Tomc\source\repos\Receptify\Receptify\obj\Debug\net9.0-android\Receptify.sourcelink.json
+C:\Users\Matija Tomc\source\repos\Receptify\Receptify\obj\Debug\net9.0-android\resizetizer\r\drawable\add.png
+C:\Users\Matija Tomc\source\repos\Receptify\Receptify\obj\Debug\net9.0-android\resizetizer\r\drawable\home.png
+C:\Users\Matija Tomc\source\repos\Receptify\Receptify\obj\Debug\net9.0-android\resizetizer\r\drawable\list.png

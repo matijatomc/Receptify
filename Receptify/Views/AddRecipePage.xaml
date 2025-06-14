@@ -4,7 +4,85 @@
              x:Class="Receptify.Views.AddRecipePage"
              Title="Dodaj recept">
 
-    <VerticalStackLayout Padding="20">
-        <Label Text="Forma za dodavanje recepta" FontSize="20" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Naziv recepta" />
+            <Entry x:Name="TitleEntry" Placeholder="Unesi naziv recepta..." />
+
+            <Label Text="Vrijeme kuhanja" />
+            <Entry x:Name="CookingTimeEntry" Placeholder="npr. 45 min" />
+
+            <!-- Sastojci -->
+            <Label Text="Sastojci" FontAttributes="Bold" />
+            <CollectionView ItemsSource="{Binding Ingredients}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout>
+                            <Entry Text="{Binding Text}" WidthRequest="250"/>
+                            <Button Text="X"
+                                    Clicked="OnRemoveIngredientClicked"
+                                    BackgroundColor="Red"
+                                    TextColor="White"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    CornerRadius="15"
+                                    FontSize="12"
+                                    Padding="0" />
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <HorizontalStackLayout>
+                <Entry x:Name="NewIngredientEntry" Placeholder="Dodaj sastojak..." />
+                <Button Text="+" Clicked="OnAddIngredientClicked" />
+            </HorizontalStackLayout>
+
+            <!-- Upute -->
+            <Label Text="Upute" FontAttributes="Bold" />
+            <CollectionView ItemsSource="{Binding Steps}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout VerticalOptions="Center" Spacing="5">
+                            <Label Text="{Binding IndexDisplay}" VerticalOptions="Center" />
+                            <Editor Text="{Binding Text}" AutoSize="TextChanges" WidthRequest="220"/>
+                            <Button Text="X" 
+                                    Clicked="OnRemoveStepClicked"
+                                    BackgroundColor="Red"
+                                    TextColor="White"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
+                                    CornerRadius="15"
+                                    FontSize="12"
+                                    Padding="0" />
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <HorizontalStackLayout>
+                <Entry x:Name="NewStepEntry" Placeholder="Dodaj uputu..." />
+                <Button Text="+" Clicked="OnAddStepClicked" />
+            </HorizontalStackLayout>
+
+            <!-- Oznake -->
+            <Label Text="Oznake" FontAttributes="Bold" />
+            <CollectionView ItemsSource="{Binding Tags}" ItemsLayout="HorizontalList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="5" Margin="3" BackgroundColor="#eee" CornerRadius="10">
+                            <Label Text="{Binding}" />
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <HorizontalStackLayout>
+                <Entry x:Name="NewTagEntry" Placeholder="Dodaj oznaku..." />
+                <Button Text="+" Clicked="OnAddTagClicked" />
+            </HorizontalStackLayout>
+
+            <Button Text="Spremi recept" Clicked="OnSaveClicked" BackgroundColor="#4CAF50" TextColor="White" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

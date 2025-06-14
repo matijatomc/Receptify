@@ -2,7 +2,6 @@
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
 
     public MainPage()
     {
@@ -11,11 +10,11 @@ public partial class MainPage : ContentPage
 
     private async void OnAddRecipeClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new AddRecipePage());
+        await Shell.Current.GoToAsync("//add");
     }
 
     private async void OnViewRecipesClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new RecipeListPage());
+        await Shell.Current.GoToAsync("//list");
     }
 }

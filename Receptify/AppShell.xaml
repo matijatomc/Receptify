@@ -6,15 +6,24 @@
     xmlns:views="clr-namespace:Receptify.Views"
     Title="Receptify">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate views:MainPage}"
-        Route="MainPage" />
-
     <TabBar>
-        <ShellContent Title="Početna" ContentTemplate="{DataTemplate views:MainPage}" />
-        <ShellContent Title="Dodaj recept" ContentTemplate="{DataTemplate views:AddRecipePage}" />
-        <ShellContent Title="Svi recepti" ContentTemplate="{DataTemplate views:RecipeListPage}" />
+        <ShellContent
+            Title="Početna"
+            Icon="home.png"
+            ContentTemplate="{DataTemplate views:MainPage}"
+            Route="main" />
+
+        <ShellContent
+            Title="Dodaj"
+            Icon="add.png"
+            ContentTemplate="{DataTemplate views:AddRecipePage}"
+            Route="add" />
+
+        <ShellContent
+            Title="Recepti"
+            Icon="list.png"
+            ContentTemplate="{DataTemplate views:RecipeListPage}"
+            Route="list" />
     </TabBar>
 
 
