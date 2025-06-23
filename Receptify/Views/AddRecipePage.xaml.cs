@@ -1,96 +1,206 @@
 ﻿using System.Collections.ObjectModel;
-using Microsoft.Maui.Controls;
+using System.ComponentModel;
 using Receptify.Models;
 
-namespace Receptify.Views
+
+namespace Receptify.Views;
+
+public partial class AddRecipePage : ContentPage
 {
-    public partial class AddRecipePage : ContentPage
+    public ObservableCollection<IngredientItem> Ingredients { get; set; } = new();
+    public ObservableCollection<StepItem> Steps { get; set; } = new();
+    public ObservableCollection<TagItem> Tags { get; set; } = new();
+
+    public AddRecipePage()
     {
-        public ObservableCollection<EditableItem> Ingredients { get; set; } = new ObservableCollection<EditableItem>();
-        public ObservableCollection<StepItem> Steps { get; set; } = new ObservableCollection<StepItem>();
+        InitializeComponent();
+        BindingContext = this;
+        LoadTags();
+    }
 
-        public ObservableCollection<string> Tags { get; set; } = new ObservableCollection<string>();
-
-        public AddRecipePage()
+    private async void LoadTags()
+    {
+        await DatabaseService.Init();
+        var allTags = await DatabaseService.GetAllTagsAsync();
+        Tags.Clear();
+        foreach (var tag in allTags)
         {
-            InitializeComponent();
-            BindingContext = this;
+            Tags.Add(new TagItem { Name = tag.Name, IsSelected = false });
         }
+    }
 
-        private void OnAddIngredientClicked(object sender, EventArgs e)
+
+    private void OnAddIngredientClicked(object sender, EventArgs e)
+    {
+        if (!string.IsNullOrWhiteSpace(NewIngredientEntry.Text))
         {
-            if (!string.IsNullOrWhiteSpace(NewIngredientEntry.Text))
+            Ingredients.Add(new IngredientItem { Text = NewIngredientEntry.Text.Trim() });
+            NewIngredientEntry.Text = string.Empty;
+        }
+    }
+    private void OnDeleteIngredientClicked(object sender, EventArgs e)
+    {
+        var button = sender as Button;
+        var ingredient = button?.CommandParameter as IngredientItem;
+        if (ingredient != null)
+        {
+            Ingredients.Remove(ingredient);
+        }
+    }
+
+    private void OnAddStepClicked(object sender, EventArgs e)
+    {
+        if (!string.IsNullOrWhiteSpace(NewStepEntry.Text))
+        {
+            Steps.Add(new StepItem
             {
-                Ingredients.Add(new EditableItem(NewIngredientEntry.Text.Trim()));
-                NewIngredientEntry.Text = string.Empty;
+                StepNumber = $"{Steps.Count + 1}.",
+                Description = NewStepEntry.Text.Trim()
+            });
+
+            NewStepEntry.Text = string.Empty;
+        }
+    }
+
+
+
+    private void OnDeleteStepClicked(object sender, EventArgs e)
+    {
+        var button = sender as Button;
+        var step = button?.CommandParameter as StepItem;
+
+        if (step != null)
+        {
+            Steps.Remove(step);
+
+            // Ponovna numeracija
+            for (int i = 0; i < Steps.Count; i++)
+            {
+                Steps[i].StepNumber = (i + 1).ToString() + ".";
             }
         }
-        private void OnRemoveIngredientClicked(object sender, EventArgs e)
+    }
+
+
+
+    private async void OnAddTagClicked(object sender, EventArgs e)
+    {
+        var trimmed = NewTagEntry.Text?.Trim();
+
+        if (string.IsNullOrWhiteSpace(trimmed) || Tags.Any(t => t.Name == trimmed))
+            return;
+
+        // Spremi novu oznaku u bazu
+        var tag = new Tag { Name = trimmed };
+        await DatabaseService.AddTagAsync(tag);
+
+        Tags.Add(new TagItem { Name = trimmed, IsSelected = false });
+        NewTagEntry.Text = "";
+    }
+
+
+    private async void OnSaveClicked(object sender, EventArgs e)
+    {
+        // Reset obruba
+        TitleEntry.BackgroundColor = Colors.Transparent;
+        CookingTimeEntry.BackgroundColor = Colors.Transparent;
+        NewIngredientEntry.BackgroundColor = Colors.Transparent;
+        NewStepEntry.BackgroundColor = Colors.Transparent;
+
+        bool isValid = true;
+
+        if (string.IsNullOrWhiteSpace(TitleEntry.Text))
         {
-            if (sender is Button button && button.BindingContext is EditableItem item)
-                Ingredients.Remove(item);
+            TitleEntry.BackgroundColor = Colors.MistyRose;
+            isValid = false;
+        }
+
+        if (string.IsNullOrWhiteSpace(CookingTimeEntry.Text))
+        {
+            CookingTimeEntry.BackgroundColor = Colors.MistyRose;
+            isValid = false;
+        }
+
+        if (Ingredients.Count == 0)
+        {
+            NewIngredientEntry.BackgroundColor = Colors.MistyRose;
+            isValid = false;
+        }
+
+        if (Steps.Count == 0 || Steps.All(s => string.IsNullOrWhiteSpace(s.Description)))
+        {
+            NewStepEntry.BackgroundColor = Colors.MistyRose;
+            isValid = false;
+        }
+
+        if (!isValid)
+        {
+            await DisplayAlert("Greška", "Molimo ispunite obavezna polja označena crvenom bojom.", "OK");
+            return;
         }
 
 
-        private void OnAddStepClicked(object sender, EventArgs e)
+        // SPREMANJE
+        await DatabaseService.Init();
+
+        var recipe = new Recipe
         {
-            if (!string.IsNullOrWhiteSpace(NewStepEntry.Text))
+            Title = TitleEntry.Text.Trim(),
+            CookingTime = CookingTimeEntry.Text.Trim()
+        };
+
+        await DatabaseService.AddRecipeAsync(recipe);
+
+        foreach (var ing in Ingredients)
+        {
+            await DatabaseService.AddIngredientAsync(new Ingredient
             {
-                Steps.Add(new StepItem
+                Text = ing.Text.Trim(),
+                RecipeId = recipe.Id
+            });
+        }
+
+        for (int i = 0; i < Steps.Count; i++)
+        {
+            var stepDesc = Steps[i].Description?.Trim();
+            if (!string.IsNullOrWhiteSpace(stepDesc))
+            {
+                await DatabaseService.AddStepAsync(new Step
                 {
-                    Text = NewStepEntry.Text.Trim(),
-                    Index = Steps.Count + 1
+                    Description = stepDesc,
+                    Order = i + 1,
+                    RecipeId = recipe.Id
                 });
-                NewStepEntry.Text = string.Empty;
             }
         }
 
-        private void OnRemoveStepClicked(object sender, EventArgs e)
-        {
-            if (sender is Button button && button.BindingContext is StepItem item)
-            {
-                Steps.Remove(item);
+        var selectedTags = Tags.Where(t => t.IsSelected).ToList();
 
-                // Update brojeva
-                for (int i = 0; i < Steps.Count; i++)
+        foreach (var tagItem in selectedTags)
+        {
+            // Dohvati ID oznake iz baze
+            var tagInDb = await DatabaseService.GetTagByNameAsync(tagItem.Name);
+            if (tagInDb != null)
+            {
+                await DatabaseService.AddRecipeTagAsync(new RecipeTag
                 {
-                    Steps[i].Index = i + 1;
-                }
+                    RecipeId = recipe.Id,
+                    TagId = tagInDb.Id
+                });
             }
         }
 
 
+        await DisplayAlert("Uspjeh", "Recept spremljen!", "OK");
 
-
-        private void OnAddTagClicked(object sender, EventArgs e)
+        // Očisti formu
+        TitleEntry.Text = "";
+        CookingTimeEntry.Text = "";
+        Ingredients.Clear();
+        Steps.Clear();
+        foreach (var tag in Tags)
         {
-            if (!string.IsNullOrWhiteSpace(NewTagEntry.Text))
-            {
-                Tags.Add(NewTagEntry.Text.Trim());
-                NewTagEntry.Text = string.Empty;
-            }
-        }
-
-        private async void OnSaveClicked(object sender, EventArgs e)
-        {
-            string title = TitleEntry.Text?.Trim();
-            string cookingTime = CookingTimeEntry.Text?.Trim();
-
-            if (string.IsNullOrWhiteSpace(title) || Ingredients.Count == 0 || Steps.Count == 0)
-            {
-                await DisplayAlert("Greška", "Molimo unesite naziv, sastojke i upute.", "OK");
-                return;
-            }
-
-            // Ovdje dodaj poziv za spremanje recepta u bazu ili servis
-            await DisplayAlert("Uspjeh", "Recept je uspješno dodan!", "OK");
-
-            // Očisti formu
-            TitleEntry.Text = string.Empty;
-            CookingTimeEntry.Text = string.Empty;
-            Ingredients.Clear();
-            Steps.Clear();
-            Tags.Clear();
+            tag.IsSelected = false;
         }
     }
 }

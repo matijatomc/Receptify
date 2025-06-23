@@ -9,12 +9,27 @@ namespace Receptify.Models
 {
     public class StepItem : INotifyPropertyChanged
     {
+        private string stepNumber;
+        public string StepNumber
+        {
+            get => stepNumber;
+            set
+            {
+                if (stepNumber != value)
+                {
+                    stepNumber = value;
+                    OnPropertyChanged(nameof(StepNumber));
+                }
+            }
+        }
+
+        public string Description { get; set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public string Text { get; set; }
-
-        public int Index { get; set; }
-
-        public string IndexDisplay => $"{Index}.";
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

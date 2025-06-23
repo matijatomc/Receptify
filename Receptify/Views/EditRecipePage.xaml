@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Receptify.Views.EditRecipePage"
+             Title="Uredi recept">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Naziv recepta" />
+            <Entry x:Name="TitleEntry" Placeholder="Unesi naziv..." />
+
+            <Label Text="Vrijeme kuhanja" />
+            <Entry x:Name="CookingTimeEntry" Placeholder="npr. 45 min" />
+
+            <Label Text="Sastojci" FontAttributes="Bold" FontSize="18"/>
+            <CollectionView ItemsSource="{Binding Ingredients}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout>
+                            <Entry Text="{Binding Text}" HorizontalOptions="FillAndExpand" />
+                            <Button Text="❌"
+                                    Clicked="OnDeleteIngredientClicked"
+                                    CommandParameter="{Binding .}" />
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <HorizontalStackLayout>
+                <Entry x:Name="NewIngredientEntry" Placeholder="Novi sastojak..." />
+                <Button Text="+" Clicked="OnAddIngredientClicked" />
+            </HorizontalStackLayout>
+
+            <Label Text="Upute" FontAttributes="Bold" FontSize="18"/>
+            <CollectionView ItemsSource="{Binding Steps}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout>
+                            <Label Text="{Binding StepNumber}" VerticalOptions="Center" />
+                            <Entry Text="{Binding Description}" HorizontalOptions="FillAndExpand" />
+                            <Button Text="❌"
+                                    Clicked="OnDeleteStepClicked"
+                                    CommandParameter="{Binding .}" />
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <HorizontalStackLayout>
+                <Entry x:Name="NewStepEntry" Placeholder="Novi korak..." />
+                <Button Text="+" Clicked="OnAddStepClicked" />
+            </HorizontalStackLayout>
+
+            <Label Text="Oznake" FontAttributes="Bold" FontSize="18"/>
+            <CollectionView ItemsSource="{Binding Tags}" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout>
+                            <CheckBox IsChecked="{Binding IsSelected}" />
+                            <Label Text="{Binding Name}" VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <HorizontalStackLayout>
+                <Entry x:Name="NewTagEntry" Placeholder="Dodaj novu oznaku..." />
+                <Button Text="+" Clicked="OnAddTagClicked" />
+            </HorizontalStackLayout>
+
+            <Button Text="Spremi promjene" Clicked="OnSaveClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

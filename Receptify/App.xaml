@@ -2,6 +2,7 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Receptify"
+             xmlns:models="clr-namespace:Receptify.Models"
              x:Class="Receptify.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -9,6 +10,7 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <models:BoolToColorConverter x:Key="BoolToColorConverter" TrueColor="LightBlue" FalseColor="LightGray" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

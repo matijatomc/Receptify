@@ -1,10 +1,47 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Receptify.Views.RecipeListPage"
-             Title="Svi recepti">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Receptify.Views.RecipeListPage"
+            Title="Recepti">
 
-    <VerticalStackLayout Padding="20">
-        <Label Text="Lista svih recepata" FontSize="20" />
+    <VerticalStackLayout Padding="10" Spacing="10">
+        <Entry x:Name="SearchEntry" Placeholder="Pretrazi po nazivu..." TextChanged="OnSearchTextChanged" />
+
+        <Label Text="Filtriraj po oznakama" FontAttributes="Bold" />
+        <CollectionView x:Name="TagFilterView" ItemsSource="{Binding AllTags}" SelectionMode="None" HeightRequest="80">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="5" Margin="5" BackgroundColor="{Binding IsSelected, Converter={StaticResource BoolToColorConverter}}" CornerRadius="10">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:Reference TagFilterView}, Path=BindingContext.ToggleTagCommand}" CommandParameter="{Binding}" />
+                        </Frame.GestureRecognizers>
+                        <Label Text="{Binding Name}" />
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <CollectionView x:Name="RecipeCollection" ItemsSource="{Binding FilteredRecipes}" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="10" Padding="10" BorderColor="LightGray" CornerRadius="10">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Command="{Binding Source={x:Reference RecipeCollection}, Path=BindingContext.RecipeTappedCommand}" 
+                                CommandParameter="{Binding}" />
+                        </Frame.GestureRecognizers>
+
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="18"/>
+                            <Label Text="{Binding CookingTime}" FontSize="14" TextColor="Gray"/>
+                            <Label Text="{Binding TagList}" FontSize="12" TextColor="DarkSlateGray" LineBreakMode="WordWrap"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>
