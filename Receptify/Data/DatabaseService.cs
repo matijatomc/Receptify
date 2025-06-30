@@ -147,4 +147,23 @@ public class DatabaseService
             await _database.DeleteAsync(recipe);
         }
     }
+    public static async Task<Tag> GetTagByIdAsync(int id)
+    {
+        await Init();
+        return await _database.Table<Tag>().Where(t => t.Id == id).FirstOrDefaultAsync();
+    }
+
+    public static async Task<int> UpdateTagAsync(Tag tag)
+    {
+        await Init();
+        return await _database.UpdateAsync(tag);
+    }
+
+
+    public static async Task DeleteTagAsync(int tagId)
+    {
+        await Init();
+        await _database.DeleteAsync<Tag>(tagId);
+    }
+
 }

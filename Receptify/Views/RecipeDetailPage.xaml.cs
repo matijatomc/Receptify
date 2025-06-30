@@ -28,7 +28,7 @@ public partial class RecipeDetailPage : ContentPage
         var tags = await DatabaseService.GetTagsForRecipeAsync(_recipeId);
 
         TitleLabel.Text = recipe.Title;
-        TimeLabel.Text = recipe.CookingTime;
+        TimeLabel.Text = recipe.CookingTimeMinutes.ToString();
         TagsLabel.Text = tags.Count > 0 ? string.Join(", ", tags.Select(t => t.Name)) : "Bez oznaka";
 
         IngredientsList.ItemsSource = ingredients;

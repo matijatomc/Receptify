@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using Receptify.Models;
-
+using System.Text.RegularExpressions;
 
 namespace Receptify.Views;
 
@@ -15,6 +15,11 @@ public partial class AddRecipePage : ContentPage
     {
         InitializeComponent();
         BindingContext = this;
+    }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
         LoadTags();
     }
 
@@ -29,7 +34,6 @@ public partial class AddRecipePage : ContentPage
         }
     }
 
-
     private void OnAddIngredientClicked(object sender, EventArgs e)
     {
         if (!string.IsNullOrWhiteSpace(NewIngredientEntry.Text))
@@ -38,6 +42,7 @@ public partial class AddRecipePage : ContentPage
             NewIngredientEntry.Text = string.Empty;
         }
     }
+
     private void OnDeleteIngredientClicked(object sender, EventArgs e)
     {
         var button = sender as Button;
@@ -62,8 +67,6 @@ public partial class AddRecipePage : ContentPage
         }
     }
 
-
-
     private void OnDeleteStepClicked(object sender, EventArgs e)
     {
         var button = sender as Button;
@@ -73,15 +76,12 @@ public partial class AddRecipePage : ContentPage
         {
             Steps.Remove(step);
 
-            // Ponovna numeracija
             for (int i = 0; i < Steps.Count; i++)
             {
                 Steps[i].StepNumber = (i + 1).ToString() + ".";
             }
         }
     }
-
-
 
     private async void OnAddTagClicked(object sender, EventArgs e)
     {
@@ -90,7 +90,6 @@ public partial class AddRecipePage : ContentPage
         if (string.IsNullOrWhiteSpace(trimmed) || Tags.Any(t => t.Name == trimmed))
             return;
 
-        // Spremi novu oznaku u bazu
         var tag = new Tag { Name = trimmed };
         await DatabaseService.AddTagAsync(tag);
 
@@ -98,10 +97,36 @@ public partial class AddRecipePage : ContentPage
         NewTagEntry.Text = "";
     }
 
+    private int ParseCookingTimeToMinutes(string input)
+    {
+        int totalMinutes = 0;
+        var lower = input.ToLower();
+
+        var match = Regex.Match(lower, @"(?:(\d+)h)?\s*(\d+)?\s*min");
+        if (match.Success)
+        {
+            if (int.TryParse(match.Groups[1].Value, out int hours))
+                totalMinutes += hours * 60;
+
+            if (int.TryParse(match.Groups[2].Value, out int minutes))
+                totalMinutes += minutes;
+        }
+        else if (lower.Contains("h"))
+        {
+            int hours = int.Parse(lower.Split('h')[0].Trim());
+            totalMinutes += hours * 60;
+        }
+        else if (lower.Contains("min"))
+        {
+            int minutes = int.Parse(lower.Split("min")[0].Trim());
+            totalMinutes += minutes;
+        }
+
+        return totalMinutes;
+    }
 
     private async void OnSaveClicked(object sender, EventArgs e)
     {
-        // Reset obruba
         TitleEntry.BackgroundColor = Colors.Transparent;
         CookingTimeEntry.BackgroundColor = Colors.Transparent;
         NewIngredientEntry.BackgroundColor = Colors.Transparent;
@@ -139,14 +164,12 @@ public partial class AddRecipePage : ContentPage
             return;
         }
 
-
-        // SPREMANJE
         await DatabaseService.Init();
 
         var recipe = new Recipe
         {
             Title = TitleEntry.Text.Trim(),
-            CookingTime = CookingTimeEntry.Text.Trim()
+            CookingTimeMinutes = ParseCookingTimeToMinutes(CookingTimeEntry.Text.Trim())
         };
 
         await DatabaseService.AddRecipeAsync(recipe);
@@ -178,7 +201,6 @@ public partial class AddRecipePage : ContentPage
 
         foreach (var tagItem in selectedTags)
         {
-            // Dohvati ID oznake iz baze
             var tagInDb = await DatabaseService.GetTagByNameAsync(tagItem.Name);
             if (tagInDb != null)
             {
@@ -190,10 +212,8 @@ public partial class AddRecipePage : ContentPage
             }
         }
 
-
         await DisplayAlert("Uspjeh", "Recept spremljen!", "OK");
 
-        // Očisti formu
         TitleEntry.Text = "";
         CookingTimeEntry.Text = "";
         Ingredients.Clear();

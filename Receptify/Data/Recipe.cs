@@ -7,5 +7,5 @@ public class Recipe
     public int Id { get; set; }
 
     public string Title { get; set; }
-    public string CookingTime { get; set; }
+    public int CookingTimeMinutes { get; set; }
 }

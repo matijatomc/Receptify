@@ -1,30 +1,80 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            x:Class="Receptify.Views.RecipeListPage"
-            Title="Recepti">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Receptify.Views.RecipeListPage"
+             Title="Recepti">
 
-    <VerticalStackLayout Padding="10" Spacing="10">
-        <Entry x:Name="SearchEntry" Placeholder="Pretrazi po nazivu..." TextChanged="OnSearchTextChanged" />
+    <Grid RowDefinitions="Auto, *" Padding="10" RowSpacing="10">
 
-        <Label Text="Filtriraj po oznakama" FontAttributes="Bold" />
-        <CollectionView x:Name="TagFilterView" ItemsSource="{Binding AllTags}" SelectionMode="None" HeightRequest="80">
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Horizontal" />
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Frame Padding="5" Margin="5" BackgroundColor="{Binding IsSelected, Converter={StaticResource BoolToColorConverter}}" CornerRadius="10">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Source={x:Reference TagFilterView}, Path=BindingContext.ToggleTagCommand}" CommandParameter="{Binding}" />
-                        </Frame.GestureRecognizers>
-                        <Label Text="{Binding Name}" />
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <VerticalStackLayout Grid.Row="0" Spacing="10">
+            <Entry x:Name="SearchEntry" Placeholder="Pretraži po nazivu..." TextChanged="OnSearchTextChanged" />
 
-        <CollectionView x:Name="RecipeCollection" ItemsSource="{Binding FilteredRecipes}" SelectionMode="None">
+            <Label Text="Filtriraj po oznakama" FontAttributes="Bold" />
+            <CollectionView x:Name="TagFilterView" ItemsSource="{Binding AllTags}" SelectionMode="None">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="5" Margin="5" CornerRadius="10" BackgroundColor="{Binding IsSelected, Converter={StaticResource BoolToColorConverter}}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference TagFilterView}, Path=BindingContext.ToggleTagCommand}" CommandParameter="{Binding}" />
+                            </Frame.GestureRecognizers>
+                            <Label Text="{Binding Name}" />
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="✎ Uredi oznake" HorizontalOptions="End" Clicked="OnEditTagsClicked" />
+
+            <!-- POPUP -->
+            <Grid x:Name="EditTagsPopup" IsVisible="False"
+                    BackgroundColor="#80000000"
+                    RowDefinitions="*,Auto,*"
+                    ColumnDefinitions="*,Auto,*"
+                    Padding="20">
+                <Frame BackgroundColor="White" Padding="20" CornerRadius="10"
+                        Grid.Row="1" Grid.Column="1" WidthRequest="300">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Uredi oznake" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center"/>
+
+                        <CollectionView x:Name="EditTagCollection" ItemsSource="{Binding EditableTags}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Entry Text="{Binding Name}" HorizontalOptions="FillAndExpand" />
+                                        <Button Text="🗑" Clicked="OnDeleteTagClicked" CommandParameter="{Binding}" />
+                                    </HorizontalStackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                            <Button Text="Odustani" Clicked="OnCancelEditTags" />
+                            <Button Text="Spremi" Clicked="OnSaveTags" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+
+            <Picker x:Name="SortPicker"
+                    Title="Sortiraj"
+                    SelectedIndexChanged="OnSortOptionChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Bez sortiranja</x:String>
+                        <x:String>Vrijeme (najkraće prvo)</x:String>
+                        <x:String>Vrijeme (najduže prvo)</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+        </VerticalStackLayout>
+
+        <CollectionView x:Name="RecipeCollection"
+                        Grid.Row="1"
+                        ItemsSource="{Binding FilteredRecipes}"
+                        SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame Margin="10" Padding="10" BorderColor="LightGray" CornerRadius="10">
@@ -36,12 +86,13 @@
 
                         <VerticalStackLayout Spacing="5">
                             <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="18"/>
-                            <Label Text="{Binding CookingTime}" FontSize="14" TextColor="Gray"/>
+                            <Label Text="{Binding CookingTimeMinutes, StringFormat='{}{0} min'}" FontSize="14" TextColor="Gray"/>
                             <Label Text="{Binding TagList}" FontSize="12" TextColor="DarkSlateGray" LineBreakMode="WordWrap"/>
                         </VerticalStackLayout>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-    </VerticalStackLayout>
+
+    </Grid>
 </ContentPage>

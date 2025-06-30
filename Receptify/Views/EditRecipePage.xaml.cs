@@ -1,5 +1,6 @@
-﻿using System.Collections.ObjectModel;
-using Receptify.Models;
+﻿using Receptify.Models;
+using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
 
 namespace Receptify.Views;
 
@@ -29,7 +30,7 @@ public partial class EditRecipePage : ContentPage
         var selectedTags = await DatabaseService.GetTagsForRecipeAsync(_recipeId);
 
         TitleEntry.Text = recipe.Title;
-        CookingTimeEntry.Text = recipe.CookingTime;
+        CookingTimeEntry.Text = recipe.CookingTimeMinutes.ToString();
 
         Ingredients.Clear();
         foreach (var ing in ingredients)
@@ -49,6 +50,7 @@ public partial class EditRecipePage : ContentPage
             });
         }
     }
+
     private void OnAddIngredientClicked(object sender, EventArgs e)
     {
         if (!string.IsNullOrWhiteSpace(NewIngredientEntry.Text))
@@ -57,6 +59,7 @@ public partial class EditRecipePage : ContentPage
             NewIngredientEntry.Text = string.Empty;
         }
     }
+
     private void OnDeleteIngredientClicked(object sender, EventArgs e)
     {
         var button = sender as Button;
@@ -81,8 +84,6 @@ public partial class EditRecipePage : ContentPage
         }
     }
 
-
-
     private void OnDeleteStepClicked(object sender, EventArgs e)
     {
         var button = sender as Button;
@@ -92,15 +93,12 @@ public partial class EditRecipePage : ContentPage
         {
             Steps.Remove(step);
 
-            // Ponovna numeracija
             for (int i = 0; i < Steps.Count; i++)
             {
                 Steps[i].StepNumber = (i + 1).ToString() + ".";
             }
         }
     }
-
-
 
     private async void OnAddTagClicked(object sender, EventArgs e)
     {
@@ -109,12 +107,39 @@ public partial class EditRecipePage : ContentPage
         if (string.IsNullOrWhiteSpace(trimmed) || Tags.Any(t => t.Name == trimmed))
             return;
 
-        // Spremi novu oznaku u bazu
         var tag = new Tag { Name = trimmed };
         await DatabaseService.AddTagAsync(tag);
 
         Tags.Add(new TagItem { Name = trimmed, IsSelected = false });
         NewTagEntry.Text = "";
+    }
+
+    private int ParseCookingTimeToMinutes(string input)
+    {
+        int totalMinutes = 0;
+        var lower = input.ToLower();
+
+        var match = Regex.Match(lower, @"(?:(\d+)h)?\s*(\d+)?\s*min");
+        if (match.Success)
+        {
+            if (int.TryParse(match.Groups[1].Value, out int hours))
+                totalMinutes += hours * 60;
+
+            if (int.TryParse(match.Groups[2].Value, out int minutes))
+                totalMinutes += minutes;
+        }
+        else if (lower.Contains("h"))
+        {
+            int hours = int.Parse(lower.Split('h')[0].Trim());
+            totalMinutes += hours * 60;
+        }
+        else if (lower.Contains("min"))
+        {
+            int minutes = int.Parse(lower.Split("min")[0].Trim());
+            totalMinutes += minutes;
+        }
+
+        return totalMinutes;
     }
 
     private async void OnSaveClicked(object sender, EventArgs e)
@@ -125,9 +150,17 @@ public partial class EditRecipePage : ContentPage
             return;
         }
 
+        int cookingMinutes = ParseCookingTimeToMinutes(CookingTimeEntry.Text);
+
+        if (cookingMinutes == 0)
+        {
+            await DisplayAlert("Greška", "Vrijeme kuhanja mora biti broj u minutama.", "OK");
+            return;
+        }
+
         var recipe = await DatabaseService.GetRecipeByIdAsync(_recipeId);
         recipe.Title = TitleEntry.Text.Trim();
-        recipe.CookingTime = CookingTimeEntry.Text.Trim();
+        recipe.CookingTimeMinutes = cookingMinutes;
         await DatabaseService.UpdateRecipeAsync(recipe);
 
         await DatabaseService.DeleteIngredientsByRecipeIdAsync(_recipeId);

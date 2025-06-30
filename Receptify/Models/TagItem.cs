@@ -9,6 +9,7 @@ namespace Receptify.Models
 {
     public class TagItem : INotifyPropertyChanged
     {
+        public int Id { get; set; }
         public string Name { get; set; }
 
         private bool isSelected;
