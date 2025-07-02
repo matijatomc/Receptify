@@ -36,11 +36,12 @@ public partial class AddRecipePage : ContentPage
 
     private void OnAddIngredientClicked(object sender, EventArgs e)
     {
-        if (!string.IsNullOrWhiteSpace(NewIngredientEntry.Text))
-        {
-            Ingredients.Add(new IngredientItem { Text = NewIngredientEntry.Text.Trim() });
-            NewIngredientEntry.Text = string.Empty;
-        }
+        if (NewIngredientEntry == null || string.IsNullOrWhiteSpace(NewIngredientEntry.Text))
+            return;
+
+        Ingredients.Add(new IngredientItem { Text = NewIngredientEntry.Text.Trim() });
+        NewIngredientEntry.Text = string.Empty;
+        
     }
 
     private void OnDeleteIngredientClicked(object sender, EventArgs e)
@@ -55,17 +56,18 @@ public partial class AddRecipePage : ContentPage
 
     private void OnAddStepClicked(object sender, EventArgs e)
     {
-        if (!string.IsNullOrWhiteSpace(NewStepEntry.Text))
-        {
-            Steps.Add(new StepItem
-            {
-                StepNumber = $"{Steps.Count + 1}.",
-                Description = NewStepEntry.Text.Trim()
-            });
+        if (NewStepEntry == null || string.IsNullOrWhiteSpace(NewStepEntry.Text))
+            return;
 
-            NewStepEntry.Text = string.Empty;
-        }
+        Steps.Add(new StepItem
+        {
+            StepNumber = $"{Steps.Count + 1}.",
+            Description = NewStepEntry.Text.Trim()
+        });
+
+        NewStepEntry.Text = string.Empty;
     }
+
 
     private void OnDeleteStepClicked(object sender, EventArgs e)
     {
@@ -121,6 +123,8 @@ public partial class AddRecipePage : ContentPage
             int minutes = int.Parse(lower.Split("min")[0].Trim());
             totalMinutes += minutes;
         }
+        else if (int.TryParse(lower, out int minutes))
+            totalMinutes += minutes;
 
         return totalMinutes;
     }
@@ -161,6 +165,14 @@ public partial class AddRecipePage : ContentPage
         if (!isValid)
         {
             await DisplayAlert("Greška", "Molimo ispunite obavezna polja označena crvenom bojom.", "OK");
+            return;
+        }
+
+        int cookingMinutes = ParseCookingTimeToMinutes(CookingTimeEntry.Text);
+
+        if (cookingMinutes == 0)
+        {
+            await DisplayAlert("Greška", "Vrijeme kuhanja mora biti broj u minutama.", "OK");
             return;
         }
 
@@ -222,5 +234,7 @@ public partial class AddRecipePage : ContentPage
         {
             tag.IsSelected = false;
         }
+
+        await Shell.Current.GoToAsync("//list");
     }
 }

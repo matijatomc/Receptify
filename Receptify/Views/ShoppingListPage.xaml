@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Receptify.Views.ShoppingListPage"
+             Title="Popis namirnica">
+
+    <VerticalStackLayout Padding="15" Spacing="10">
+
+        <CollectionView x:Name="ShoppingListView" ItemsSource="{Binding ShoppingItems}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout>
+                        <CheckBox IsChecked="{Binding IsChecked}" />
+                        <Label Text="{Binding Text}" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Label Text="Nema dodanih namirnica."
+               Grid.Row="1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="16"
+               TextColor="Gray"
+               IsVisible="{Binding IsEmpty}" />
+
+        <Button Text="🗑 Izbriši označeno" Clicked="OnDeleteCheckedClicked" IsVisible="{Binding IsNotEmpty}" />
+        <Button Text="🧹 Izbriši sve" Clicked="OnDeleteAllClicked" BackgroundColor="Tomato" TextColor="White" IsVisible="{Binding IsNotEmpty}" />
+    </VerticalStackLayout>
+</ContentPage>

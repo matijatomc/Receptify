@@ -16,9 +16,12 @@
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame Padding="5" Margin="5" CornerRadius="10" BackgroundColor="{Binding IsSelected, Converter={StaticResource BoolToColorConverter}}">
+                        <Frame Padding="5" Margin="5" 
+                               CornerRadius="10" 
+                               BackgroundColor="{Binding IsSelected, Converter={StaticResource BoolToColorConverter}}">
                             <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source={x:Reference TagFilterView}, Path=BindingContext.ToggleTagCommand}" CommandParameter="{Binding}" />
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference TagFilterView}, Path=BindingContext.ToggleTagCommand}" 
+                                                      CommandParameter="{Binding}" />
                             </Frame.GestureRecognizers>
                             <Label Text="{Binding Name}" />
                         </Frame>
@@ -27,7 +30,6 @@
             </CollectionView>
             <Button Text="✎ Uredi oznake" HorizontalOptions="End" Clicked="OnEditTagsClicked" />
 
-            <!-- POPUP -->
             <Grid x:Name="EditTagsPopup" IsVisible="False"
                     BackgroundColor="#80000000"
                     RowDefinitions="*,Auto,*"
@@ -63,6 +65,8 @@
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Bez sortiranja</x:String>
+                        <x:String>Naziv (A-Z)</x:String>
+                        <x:String>Naziv (Z-A)</x:String>
                         <x:String>Vrijeme (najkraće prvo)</x:String>
                         <x:String>Vrijeme (najduže prvo)</x:String>
                     </x:Array>
@@ -93,6 +97,12 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
+        <Label Text="Nema dodanih recepata."
+               Grid.Row="1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="16"
+               TextColor="Gray"
+               IsVisible="{Binding IsEmpty}" />
     </Grid>
 </ContentPage>

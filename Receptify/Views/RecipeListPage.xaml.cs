@@ -17,6 +17,8 @@ public partial class RecipeListPage : ContentPage
     public ICommand RecipeTappedCommand { get; }
     public ICommand ToggleTagCommand { get; }
 
+    public bool IsEmpty => FilteredRecipes.Count == 0;
+
     public RecipeListPage()
     {
         InitializeComponent();
@@ -84,11 +86,19 @@ public partial class RecipeListPage : ContentPage
             case "Vrijeme (najduže prvo)":
                 filtered = filtered.OrderByDescending(r => r.CookingTimeMinutes);
                 break;
+            case "Naziv (A-Z)":
+                filtered = filtered.OrderBy(r => r.Title);
+                break;
+            case "Naziv (Z-A)":
+                filtered = filtered.OrderByDescending(r => r.Title);
+                break;
         }
 
         FilteredRecipes.Clear();
         foreach (var r in filtered)
             FilteredRecipes.Add(r);
+
+        OnPropertyChanged(nameof(IsEmpty));
     }
 
     private void OnSearchTextChanged(object sender, TextChangedEventArgs e)

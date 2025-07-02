@@ -17,49 +17,78 @@
             <CollectionView ItemsSource="{Binding Ingredients}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <HorizontalStackLayout>
-                            <Entry Text="{Binding Text}" HorizontalOptions="FillAndExpand" />
-                            <Button Text="❌"
+                        <Grid ColumnDefinitions="*, Auto" Padding="0,5">
+                            <Editor Text="{Binding Text}" 
+                                    Margin="5,0"
+                                    Grid.Column="0"/>
+                            <Button Text="❌" 
                                     Clicked="OnDeleteIngredientClicked"
-                                    CommandParameter="{Binding .}" />
-                        </HorizontalStackLayout>
+                                    CommandParameter="{Binding .}"
+                                    VerticalOptions="Start"
+                                    Grid.Column="1"/>
+                        </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <HorizontalStackLayout>
-                <Entry x:Name="NewIngredientEntry" Placeholder="Novi sastojak..." />
-                <Button Text="+" Clicked="OnAddIngredientClicked" />
-            </HorizontalStackLayout>
+            <Grid ColumnDefinitions="*, Auto" Padding="0,5">
+                <Editor x:Name="NewIngredientEntry" 
+                        Placeholder="Novi sastojak..." 
+                        StyleId="NewIngredientEntry" 
+                        AutoSize="TextChanges" 
+                        Grid.Column="0"/>
+                <Button Text="+" 
+                        Clicked="OnAddIngredientClicked" 
+                        Grid.Column="1"/>
+            </Grid>
 
             <Label Text="Upute" FontAttributes="Bold" FontSize="18"/>
             <CollectionView ItemsSource="{Binding Steps}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <HorizontalStackLayout>
-                            <Label Text="{Binding StepNumber}" VerticalOptions="Center" />
-                            <Entry Text="{Binding Description}" HorizontalOptions="FillAndExpand" />
+                        <Grid ColumnDefinitions="Auto, *, Auto" Padding="0,5">
+                            <Label Text="{Binding StepNumber}" 
+                                   VerticalOptions="Start"
+                                   Margin="0,5"
+                                   Grid.Column="0" />
+
+                            <Editor Text="{Binding Description}" 
+                                    AutoSize="TextChanges"
+                                    FontSize="14"
+                                    Margin="5,0"
+                                    Grid.Column="1" />
+
                             <Button Text="❌"
                                     Clicked="OnDeleteStepClicked"
-                                    CommandParameter="{Binding .}" />
-                        </HorizontalStackLayout>
+                                    CommandParameter="{Binding .}"
+                                    VerticalOptions="Start"
+                                    Grid.Column="2" />
+                        </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <HorizontalStackLayout>
-                <Entry x:Name="NewStepEntry" Placeholder="Novi korak..." />
-                <Button Text="+" Clicked="OnAddStepClicked" />
-            </HorizontalStackLayout>
+            <Grid  ColumnDefinitions="*, Auto" Padding="0,5">
+                <Editor x:Name="NewStepEntry" 
+                        Placeholder="Nova uputa..." 
+                        StyleId="NewStepEntry" 
+                        FontSize="14" 
+                        AutoSize="TextChanges" 
+                        Grid.Column="0"  />
+                <Button Text="+" 
+                        Clicked="OnAddStepClicked" 
+                        VerticalOptions="Start" 
+                        Grid.Column="1" />
+            </Grid>
 
-            <Label Text="Oznake" FontAttributes="Bold" FontSize="18"/>
+            <Label Text="Oznake" FontAttributes="Bold"/>
             <CollectionView ItemsSource="{Binding Tags}" SelectionMode="None">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <HorizontalStackLayout>
-                            <CheckBox IsChecked="{Binding IsSelected}" />
-                            <Label Text="{Binding Name}" VerticalOptions="Center" />
-                        </HorizontalStackLayout>
+                        <Grid Padding="5" ColumnDefinitions="Auto,*" VerticalOptions="Center">
+                            <CheckBox IsChecked="{Binding IsSelected}" VerticalOptions="Center" />
+                            <Label Text="{Binding Name}" Grid.Column="1" VerticalOptions="Center" />
+                        </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

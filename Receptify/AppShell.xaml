@@ -24,6 +24,12 @@
             Icon="list.png"
             ContentTemplate="{DataTemplate views:RecipeListPage}"
             Route="list" />
+
+        <ShellContent
+            Title="Namirnice"
+            Icon="list.png"
+            ContentTemplate="{DataTemplate views:ShoppingListPage}"
+            Route="shopping" />
     </TabBar>
 
 

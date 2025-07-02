@@ -1,0 +1,4 @@
+C:\Users\tomcm\source\repos\matijatomc\Receptify\publish\com.companyname.receptify-Signed.aab
+C:\Users\tomcm\source\repos\matijatomc\Receptify\publish\com.companyname.receptify.aab
+C:\Users\tomcm\source\repos\matijatomc\Receptify\publish\com.companyname.receptify-Signed.apk
+C:\Users\tomcm\source\repos\matijatomc\Receptify\publish\_Microsoft.Android.Resource.Designer.dll

@@ -26,14 +26,18 @@
             <CollectionView x:Name="StepsList">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <HorizontalStackLayout Spacing="10">
-                            <Label Text="{Binding Order, StringFormat='{}{0}.'}" FontAttributes="Bold" />
-                            <Label Text="{Binding Description}" />
-                        </HorizontalStackLayout>
+                        <Grid ColumnDefinitions="Auto, *" Margin="0,5">
+                            <Label Text="{Binding Order, StringFormat='{}{0}.'}"
+                                   Margin="0,0,5,0" 
+                                   FontAttributes="Bold" 
+                                   Grid.Column="0"/>
+                            <Label Text="{Binding Description}" Grid.Column="1" />
+                        </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
+            <Button Text="📝 Stvori popis namirnica" Clicked="OnGenerateShoppingListClicked"/>
             <Button Text="Uredi recept" Clicked="OnEditClicked" />
             <Button Text="Izbriši recept" TextColor="Red" Clicked="OnDeleteRecipeClicked" />
 

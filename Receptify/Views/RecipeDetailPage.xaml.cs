@@ -28,12 +28,30 @@ public partial class RecipeDetailPage : ContentPage
         var tags = await DatabaseService.GetTagsForRecipeAsync(_recipeId);
 
         TitleLabel.Text = recipe.Title;
-        TimeLabel.Text = recipe.CookingTimeMinutes.ToString();
+        TimeLabel.Text = recipe.CookingTimeMinutes.ToString() +" min";
         TagsLabel.Text = tags.Count > 0 ? string.Join(", ", tags.Select(t => t.Name)) : "Bez oznaka";
 
         IngredientsList.ItemsSource = ingredients;
         StepsList.ItemsSource = steps.OrderBy(s => s.Order).ToList();
     }
+
+    private async void OnGenerateShoppingListClicked(object sender, EventArgs e)
+    {
+        await DatabaseService.Init();
+        var ingredients = await DatabaseService.GetIngredientsByRecipeIdAsync(_recipeId);
+
+        foreach (var ing in ingredients)
+        {
+            await DatabaseService.AddShoppingItemAsync(new ShoppingItem
+            {
+                Text = ing.Text,
+                IsChecked = false
+            });
+        }
+
+        await Shell.Current.GoToAsync("//shopping");
+    }
+
 
     private async void OnEditClicked(object sender, EventArgs e)
     {
@@ -48,7 +66,6 @@ public partial class RecipeDetailPage : ContentPage
 
         await DatabaseService.Init();
 
-        // Izbriši sve povezane podatke
         await DatabaseService.DeleteIngredientsByRecipeIdAsync(_recipeId);
         await DatabaseService.DeleteStepsByRecipeIdAsync(_recipeId);
         await DatabaseService.DeleteRecipeTagsAsync(_recipeId);
@@ -56,7 +73,6 @@ public partial class RecipeDetailPage : ContentPage
 
         await DisplayAlert("Obrisano", "Recept je uspješno izbrisan.", "OK");
 
-        // Vrati se na listu
         await Navigation.PopAsync();
     }
 

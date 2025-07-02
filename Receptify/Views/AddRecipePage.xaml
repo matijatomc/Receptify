@@ -13,46 +13,73 @@
             <Label Text="Vrijeme kuhanja" />
             <Entry x:Name="CookingTimeEntry" Placeholder="npr. 45 min" StyleId="CookingTimeEntry" />
 
-            <!-- Sastojci -->
             <Label Text="Sastojci" FontAttributes="Bold"/>
             <CollectionView ItemsSource="{Binding Ingredients}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <HorizontalStackLayout>
-                            <Entry Text="{Binding Text}" HorizontalOptions="FillAndExpand" />
+                        <Grid ColumnDefinitions="*, Auto" Padding="0,5">
+                            <Editor Text="{Binding Text}" 
+                                    Margin="5,0"
+                                    Grid.Column="0"/>
                             <Button Text="❌" 
-                            Clicked="OnDeleteIngredientClicked"
-                            CommandParameter="{Binding .}" />
-                        </HorizontalStackLayout>
+                                    Clicked="OnDeleteIngredientClicked"
+                                    CommandParameter="{Binding .}"
+                                    VerticalOptions="Start"
+                                    Grid.Column="1"/>
+                        </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <HorizontalStackLayout>
-                <Entry x:Name="NewIngredientEntry" Placeholder="Novi sastojak..." StyleId="NewIngredientEntry" />
-                <Button Text="+" Clicked="OnAddIngredientClicked"/>
-            </HorizontalStackLayout>
+            
+            <Grid ColumnDefinitions="*, Auto" Padding="0,5">
+                <Editor x:Name="NewIngredientEntry" 
+                        Placeholder="Novi sastojak..." 
+                        StyleId="NewIngredientEntry" 
+                        AutoSize="TextChanges" 
+                        Grid.Column="0"/>
+                <Button Text="+" 
+                        Clicked="OnAddIngredientClicked" 
+                        Grid.Column="1"/>
+            </Grid>
 
             <Label Text="Upute" FontAttributes="Bold"/>
             <CollectionView ItemsSource="{Binding Steps}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <HorizontalStackLayout>
-                            <Label Text="{Binding StepNumber}" VerticalOptions="Center" />
-                            <Entry Text="{Binding Description}" HorizontalOptions="FillAndExpand" />
+                        <Grid ColumnDefinitions="Auto, *, Auto" Padding="0,5">
+                            <Label Text="{Binding StepNumber}" 
+                                   VerticalOptions="Start"
+                                   Margin="0,5"
+                                   Grid.Column="0" />
+
+                            <Editor Text="{Binding Description}" 
+                                    AutoSize="TextChanges"
+                                    Margin="5,0"
+                                    Grid.Column="1" />
+
                             <Button Text="❌"
-                                Clicked="OnDeleteStepClicked"
-                                CommandParameter="{Binding .}" />
-                        </HorizontalStackLayout>
+                                    Clicked="OnDeleteStepClicked"
+                                    CommandParameter="{Binding .}"
+                                    VerticalOptions="Start"
+                                    Grid.Column="2" />
+                        </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <HorizontalStackLayout>
-                <Entry x:Name="NewStepEntry" Placeholder="Nova uputa..." StyleId="NewStepEntry" />
-                <Button Text="+" Clicked="OnAddStepClicked"/>
-            </HorizontalStackLayout>
+            <Grid  ColumnDefinitions="*, Auto" Padding="0,5">
+                <Editor x:Name="NewStepEntry" 
+                        Placeholder="Nova uputa..." 
+                        StyleId="NewStepEntry" 
+                        FontSize="14" 
+                        AutoSize="TextChanges" 
+                        Grid.Column="0"  />
+                <Button Text="+" 
+                        Clicked="OnAddStepClicked" 
+                        VerticalOptions="Start" 
+                        Grid.Column="1" />
+            </Grid>
 
-            <!-- Oznake -->
             <Label Text="Oznake (tagovi)" FontAttributes="Bold"/>
             <CollectionView ItemsSource="{Binding Tags}">
                 <CollectionView.ItemTemplate>
@@ -69,7 +96,6 @@
                 <Button Text="Dodaj" Clicked="OnAddTagClicked"/>
             </HorizontalStackLayout>
 
-            <!-- Spremi -->
             <Button Text="Spremi recept" Clicked="OnSaveClicked"/>
         </VerticalStackLayout>
     </ScrollView>

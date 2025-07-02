@@ -30,7 +30,7 @@ public partial class EditRecipePage : ContentPage
         var selectedTags = await DatabaseService.GetTagsForRecipeAsync(_recipeId);
 
         TitleEntry.Text = recipe.Title;
-        CookingTimeEntry.Text = recipe.CookingTimeMinutes.ToString();
+        CookingTimeEntry.Text = recipe.CookingTimeMinutes.ToString() + " min";
 
         Ingredients.Clear();
         foreach (var ing in ingredients)
@@ -138,15 +138,48 @@ public partial class EditRecipePage : ContentPage
             int minutes = int.Parse(lower.Split("min")[0].Trim());
             totalMinutes += minutes;
         }
+        else if (int.TryParse(lower, out int minutes))
+            totalMinutes += minutes;
 
-        return totalMinutes;
+            return totalMinutes;
     }
 
     private async void OnSaveClicked(object sender, EventArgs e)
     {
-        if (string.IsNullOrWhiteSpace(TitleEntry.Text) || string.IsNullOrWhiteSpace(CookingTimeEntry.Text) || Ingredients.Count == 0 || Steps.Count == 0)
+        TitleEntry.BackgroundColor = Colors.Transparent;
+        CookingTimeEntry.BackgroundColor = Colors.Transparent;
+        NewIngredientEntry.BackgroundColor = Colors.Transparent;
+        NewStepEntry.BackgroundColor = Colors.Transparent;
+
+        bool isValid = true;
+
+        if (string.IsNullOrWhiteSpace(TitleEntry.Text))
         {
-            await DisplayAlert("Greška", "Molimo ispunite sva obavezna polja.", "OK");
+            TitleEntry.BackgroundColor = Colors.MistyRose;
+            isValid = false;
+        }
+
+        if (string.IsNullOrWhiteSpace(CookingTimeEntry.Text))
+        {
+            CookingTimeEntry.BackgroundColor = Colors.MistyRose;
+            isValid = false;
+        }
+
+        if (Ingredients.Count == 0)
+        {
+            NewIngredientEntry.BackgroundColor = Colors.MistyRose;
+            isValid = false;
+        }
+
+        if (Steps.Count == 0 || Steps.All(s => string.IsNullOrWhiteSpace(s.Description)))
+        {
+            NewStepEntry.BackgroundColor = Colors.MistyRose;
+            isValid = false;
+        }
+
+        if (!isValid)
+        {
+            await DisplayAlert("Greška", "Molimo ispunite obavezna polja označena crvenom bojom.", "OK");
             return;
         }
 
