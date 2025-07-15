@@ -7,14 +7,26 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
 
-            <Label x:Name="TitleLabel" FontAttributes="Bold" FontSize="24" />
-            <Label x:Name="TimeLabel" FontSize="16" TextColor="Gray" />
+            <Grid ColumnDefinitions="*, Auto" VerticalOptions="Center">
+                <Label Text="{Binding Recipe.Title}" 
+                       FontAttributes="Bold" FontSize="24" 
+                       VerticalOptions="Center" />
+
+                <ImageButton Source="{Binding FavoriteIcon}" 
+                             Command="{Binding ToggleFavoriteCommand}" 
+                             WidthRequest="30" HeightRequest="30" 
+                             BackgroundColor="Transparent"
+                             HorizontalOptions="End" />
+            </Grid>
+
+            <Label Text="{Binding Recipe.CookingTimeMinutes, Converter={StaticResource TimeConverter}}" 
+                   FontSize="16" TextColor="Gray" />
 
             <Label Text="Oznake" FontAttributes="Bold" FontSize="18" />
-            <Label x:Name="TagsLabel" FontSize="14" TextColor="DarkSlateGray" />
+            <Label Text="{Binding TagList}" FontSize="14" TextColor="DarkSlateGray" />
 
             <Label Text="Sastojci" FontAttributes="Bold" FontSize="18"/>
-            <CollectionView x:Name="IngredientsList">
+            <CollectionView ItemsSource="{Binding Ingredients}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Label Text="{Binding Text}" FontSize="14"/>
@@ -23,7 +35,7 @@
             </CollectionView>
 
             <Label Text="Upute" FontAttributes="Bold" FontSize="18"/>
-            <CollectionView x:Name="StepsList">
+            <CollectionView ItemsSource="{Binding Steps}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid ColumnDefinitions="Auto, *" Margin="0,5">
@@ -36,6 +48,15 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+
+            <Label Text="Bilješka" FontAttributes="Bold" FontSize="18" />
+            <Editor Text="{Binding Recipe.Note}" AutoSize="TextChanges" Placeholder="Upiši bilješku o receptu..." />
+
+            <Label Text="Ocjena" FontAttributes="Bold" FontSize="18" />
+            <Slider Minimum="0" Maximum="5" Value="{Binding Recipe.Rating}" x:Name="RatingSlider" />
+            <Label Text="{Binding Source={x:Reference RatingSlider}, Path=Value, StringFormat='Ocjena: {0:F0}'}" />
+
+            <Button Text="💾 Spremi bilješku i ocjenu" Clicked="OnSaveNoteClicked" />
 
             <Button Text="📝 Stvori popis namirnica" Clicked="OnGenerateShoppingListClicked"/>
             <Button Text="Uredi recept" Clicked="OnEditClicked" />

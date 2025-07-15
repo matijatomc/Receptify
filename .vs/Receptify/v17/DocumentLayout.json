@@ -3,8 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\receptify.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\receptify.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\mainpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\mainpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\recipelistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\recipelistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\recipelistpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\recipelistpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\models\\recipedisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\models\\recipedisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\recipedetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\recipedetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\data\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\data\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\recipedetailpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\recipedetailpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +47,99 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Receptify",
-              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Receptify.csproj",
-              "RelativeDocumentMoniker": "Receptify\\Receptify.csproj",
-              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Receptify.csproj",
-              "RelativeToolTip": "Receptify\\Receptify.csproj",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAGMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-02T22:04:27.164Z",
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "Receptify\\Views\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\MainPage.xaml.cs",
+              "RelativeToolTip": "Receptify\\Views\\MainPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T17:28:09.097Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Receptify\\Views\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\MainPage.xaml",
+              "RelativeToolTip": "Receptify\\Views\\MainPage.xaml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-12T17:21:31.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RecipeDisplay.cs",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Models\\RecipeDisplay.cs",
+              "RelativeDocumentMoniker": "Receptify\\Models\\RecipeDisplay.cs",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Models\\RecipeDisplay.cs",
+              "RelativeToolTip": "Receptify\\Models\\RecipeDisplay.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T17:16:58.197Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RecipeListPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeListPage.xaml.cs",
+              "RelativeDocumentMoniker": "Receptify\\Views\\RecipeListPage.xaml.cs",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeListPage.xaml.cs",
+              "RelativeToolTip": "Receptify\\Views\\RecipeListPage.xaml.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAUwIoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T16:21:54.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RecipeListPage.xaml",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeListPage.xaml",
+              "RelativeDocumentMoniker": "Receptify\\Views\\RecipeListPage.xaml",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeListPage.xaml",
+              "RelativeToolTip": "Receptify\\Views\\RecipeListPage.xaml",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAAEkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-12T16:09:28.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RecipeDetailPage.xaml",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeDetailPage.xaml",
+              "RelativeDocumentMoniker": "Receptify\\Views\\RecipeDetailPage.xaml",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeDetailPage.xaml",
+              "RelativeToolTip": "Receptify\\Views\\RecipeDetailPage.xaml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADgAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-12T16:07:24.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RecipeDetailPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeDetailPage.xaml.cs",
+              "RelativeDocumentMoniker": "Receptify\\Views\\RecipeDetailPage.xaml.cs",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeDetailPage.xaml.cs",
+              "RelativeToolTip": "Receptify\\Views\\RecipeDetailPage.xaml.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAUwGsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T16:07:21.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Recipe.cs",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Data\\Recipe.cs",
+              "RelativeDocumentMoniker": "Receptify\\Data\\Recipe.cs",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Data\\Recipe.cs",
+              "RelativeToolTip": "Receptify\\Data\\Recipe.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T16:05:49.942Z"
             }
           ]
         }

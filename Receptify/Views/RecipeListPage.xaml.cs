@@ -4,6 +4,8 @@ using Receptify.Models;
 
 namespace Receptify.Views;
 
+[QueryProperty(nameof(FavoritesOnly), "favorites")]
+
 public partial class RecipeListPage : ContentPage
 {
     public ObservableCollection<RecipeDisplay> AllRecipes { get; set; } = new();
@@ -16,8 +18,11 @@ public partial class RecipeListPage : ContentPage
 
     public ICommand RecipeTappedCommand { get; }
     public ICommand ToggleTagCommand { get; }
+    public ICommand ToggleFavoriteCommand { get; }
 
     public bool IsEmpty => FilteredRecipes.Count == 0;
+
+    private bool isFavoriteFilterRequested = false;
 
     public RecipeListPage()
     {
@@ -25,6 +30,7 @@ public partial class RecipeListPage : ContentPage
         BindingContext = this;
         RecipeTappedCommand = new Command<RecipeDisplay>(OnRecipeTapped);
         ToggleTagCommand = new Command<TagItem>(OnToggleTag);
+        ToggleFavoriteCommand = new Command<RecipeDisplay>(OnToggleFavorite);
     }
 
     protected override async void OnAppearing()
@@ -32,6 +38,18 @@ public partial class RecipeListPage : ContentPage
         base.OnAppearing();
         await LoadDataAsync();
     }
+
+    public string FavoritesOnly
+    {
+        set
+        {
+            if (value?.ToLower() == "true")
+            {
+                isFavoriteFilterRequested = true;
+            }
+        }
+    }
+
 
     private async Task LoadDataAsync()
     {
@@ -51,6 +69,24 @@ public partial class RecipeListPage : ContentPage
             AllTags.Add(tagItem);
         }
 
+        AllTags.Insert(0, new TagItem
+        {
+            Id = -1,
+            Name = "★ Favoriti",
+            IsSelected = false
+        });
+
+        if (isFavoriteFilterRequested)
+        {
+            var favoriteTag = AllTags.FirstOrDefault(t => t.Name == "★ Favoriti");
+            if (favoriteTag != null)
+            {
+                favoriteTag.IsSelected = true;
+                SelectedTags.Add(favoriteTag);
+            }
+            isFavoriteFilterRequested = false;
+        }
+
         AllRecipes.Clear();
         var recipeList = await DatabaseService.GetAllRecipesAsync();
 
@@ -62,6 +98,8 @@ public partial class RecipeListPage : ContentPage
                 Id = recipe.Id,
                 Title = recipe.Title,
                 CookingTimeMinutes = recipe.CookingTimeMinutes,
+                Rating = recipe.Rating,
+                IsFavorite = recipe.IsFavorite,
                 Tags = recipeTags.Select(t => t.Name).ToList()
             });
         }
@@ -73,9 +111,12 @@ public partial class RecipeListPage : ContentPage
     {
         var query = SearchEntry.Text?.Trim().ToLower() ?? string.Empty;
 
+        bool filterFavorites = SelectedTags.Any(t => t.Name == "★ Favoriti");
+
         var filtered = AllRecipes.Where(r =>
             (string.IsNullOrWhiteSpace(query) || r.Title.ToLower().Contains(query)) &&
-            (!SelectedTags.Any() || SelectedTags.All(tag => r.Tags.Contains(tag.Name)))
+            (!SelectedTags.Any(t => t.Name != "★ Favoriti") || SelectedTags.Where(t => t.Name != "★ Favoriti").All(tag => r.Tags.Contains(tag.Name))) &&
+            (!filterFavorites || r.IsFavorite)
         );
 
         switch (selectedSortOption)
@@ -91,6 +132,12 @@ public partial class RecipeListPage : ContentPage
                 break;
             case "Naziv (Z-A)":
                 filtered = filtered.OrderByDescending(r => r.Title);
+                break;
+            case "Ocjena (najbolje prvo)":
+                filtered = filtered.OrderByDescending(r => r.Rating);
+                break;
+            case "Ocjena (najgore prvo)":
+                filtered = filtered.OrderBy(r => r.Rating);
                 break;
         }
 
@@ -194,5 +241,12 @@ public partial class RecipeListPage : ContentPage
             await DatabaseService.DeleteTagAsync(tagItem.Id);
             EditableTags.Remove(tagItem);
         }
+    }
+
+    private async void OnToggleFavorite(RecipeDisplay recipe)
+    {
+        recipe.IsFavorite = !recipe.IsFavorite;
+        await DatabaseService.ToggleFavoriteAsync(recipe.Id, recipe.IsFavorite);
+        ApplyFilters();
     }
 }

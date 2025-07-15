@@ -57,6 +57,17 @@ public static class DatabaseService
         }
     }
 
+    public static async Task ToggleFavoriteAsync(int recipeId, bool isFavorite)
+    {
+        await Init();
+        var recipe = await _database.Table<Recipe>().Where(r => r.Id == recipeId).FirstOrDefaultAsync();
+        if (recipe != null)
+        {
+            recipe.IsFavorite = isFavorite;
+            await _database.UpdateAsync(recipe);
+        }
+    }
+
     // -------------------- INGREDIENT --------------------
     public static async Task<int> AddIngredientAsync(Ingredient ingredient)
     {

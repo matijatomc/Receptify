@@ -24,6 +24,58 @@
                 BackgroundColor="#2196F3"
                 TextColor="White" />
 
+        <Button Text="🛒 Prikaži popis namirnica"
+                Clicked="OnViewShoppingListClicked"
+                FontSize="18"
+                CornerRadius="12"
+                BackgroundColor="#9C27B0"
+                TextColor="White" />
+
+        <Label Text="Najdraži recepti" FontSize="20" FontAttributes="Bold" />
+
+        <Label Text="Nema spremljenih favorita."
+               Grid.Row="1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="16"
+               TextColor="Gray"
+               IsVisible="{Binding IsEmpty}" />
+
+        <CollectionView x:Name="FavoritePreviewCollection"
+                ItemsSource="{Binding FavoritePreview}"
+                SelectionMode="None"
+                HeightRequest="100">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5" Padding="10" BorderColor="LightGray" CornerRadius="10" WidthRequest="150">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer 
+                        Command="{Binding Source={x:Reference FavoritePreviewCollection}, Path=BindingContext.FavoriteTappedCommand}"
+                        CommandParameter="{Binding}" />
+                        </Frame.GestureRecognizers>
+
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="16" LineBreakMode="TailTruncation"/>
+                            <Label Text="{Binding Rating, StringFormat='Ocjena: {0}/5'}" FontSize="14" />
+                            <Label Text="{Binding CookingTimeMinutes, Converter={StaticResource TimeConverter}}" FontSize="12" TextColor="Gray"/>
+                            <Label Text="{Binding TagList}" FontSize="10" TextColor="DarkSlateGray" LineBreakMode="WordWrap"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="➤ Više favorita"
+                Clicked="OnViewAllFavoritesClicked"
+                FontSize="16"
+                BackgroundColor="#FF9800"
+                TextColor="White"
+                CornerRadius="12" 
+                IsVisible="{Binding IsNotEmpty}"/>
+
     </VerticalStackLayout>
 
 </ContentPage>

@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <converters:BoolToColorConverter x:Key="BoolToColorConverter" />
+            <converters:TimeConverter x:Key="TimeConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

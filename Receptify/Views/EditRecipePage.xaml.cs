@@ -1,6 +1,7 @@
 ﻿using Receptify.Models;
 using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
+using Receptify.Converters;
 
 namespace Receptify.Views;
 
@@ -30,7 +31,7 @@ public partial class EditRecipePage : ContentPage
         var selectedTags = await DatabaseService.GetTagsForRecipeAsync(_recipeId);
 
         TitleEntry.Text = recipe.Title;
-        CookingTimeEntry.Text = recipe.CookingTimeMinutes.ToString() + " min";
+        CookingTimeEntry.Text = TimeConverter.ConvertToTimeString(recipe.CookingTimeMinutes);
 
         Ingredients.Clear();
         foreach (var ing in ingredients)

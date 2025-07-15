@@ -458,3 +458,13 @@ C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-an
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-xxxhdpi\heart_outline.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-xxhdpi\heart_outline.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-xhdpi\heart_outline.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-hdpi\heart_outline.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-mdpi\heart_outline.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-xxxhdpi\heart_filled.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-xxhdpi\heart_filled.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-xhdpi\heart_filled.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-hdpi\heart_filled.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-mdpi\heart_filled.png

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1022rF8+F2A=",
+  "dgSpecHash": "DlKR2T0VW7k=",
   "success": true,
   "projectFilePath": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Receptify.csproj",
   "expectedPackageFiles": [
@@ -25,7 +25,7 @@
     "C:\\Users\\tomcm\\.nuget\\packages\\microsoft.maui.graphics\\9.0.51\\microsoft.maui.graphics.9.0.51.nupkg.sha512",
     "C:\\Users\\tomcm\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\9.0.51\\microsoft.maui.graphics.win2d.winui.desktop.9.0.51.nupkg.sha512",
     "C:\\Users\\tomcm\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.51\\microsoft.maui.resizetizer.9.0.51.nupkg.sha512",
-    "C:\\Users\\tomcm\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.6\\microsoft.net.illink.tasks.9.0.6.nupkg.sha512",
+    "C:\\Users\\tomcm\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.7\\microsoft.net.illink.tasks.9.0.7.nupkg.sha512",
     "C:\\Users\\tomcm\\.nuget\\packages\\microsoft.web.webview2\\1.0.2903.40\\microsoft.web.webview2.1.0.2903.40.nupkg.sha512",
     "C:\\Users\\tomcm\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
     "C:\\Users\\tomcm\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.250205002\\microsoft.windowsappsdk.1.6.250205002.nupkg.sha512",
@@ -130,10 +130,6 @@
     "C:\\Users\\tomcm\\.nuget\\packages\\xamarin.kotlinx.coroutines.core.jvm\\1.9.0.2\\xamarin.kotlinx.coroutines.core.jvm.1.9.0.2.nupkg.sha512",
     "C:\\Users\\tomcm\\.nuget\\packages\\xamarin.kotlinx.serialization.core\\1.7.3.2\\xamarin.kotlinx.serialization.core.1.7.3.2.nupkg.sha512",
     "C:\\Users\\tomcm\\.nuget\\packages\\xamarin.kotlinx.serialization.core.jvm\\1.7.3.2\\xamarin.kotlinx.serialization.core.jvm.1.7.3.2.nupkg.sha512",
-    "C:\\Users\\tomcm\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\9.0.6\\microsoft.netcore.app.runtime.win-x64.9.0.6.nupkg.sha512",
-    "C:\\Users\\tomcm\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\9.0.6\\microsoft.windowsdesktop.app.runtime.win-x64.9.0.6.nupkg.sha512",
-    "C:\\Users\\tomcm\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\9.0.6\\microsoft.aspnetcore.app.runtime.win-x64.9.0.6.nupkg.sha512",
-    "C:\\Users\\tomcm\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\9.0.6\\microsoft.netcore.app.crossgen2.win-x64.9.0.6.nupkg.sha512",
     "C:\\Users\\tomcm\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"
   ],
   "logs": []

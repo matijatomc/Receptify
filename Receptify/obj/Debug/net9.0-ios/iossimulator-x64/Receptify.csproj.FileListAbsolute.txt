@@ -270,9 +270,15 @@ C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@2x.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@3x.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\mauisplash.stamp
-C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\list.png
-C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\add.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\home.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\heart_outline@3x.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\heart_outline@2x.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\heart_outline.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\heart_filled@3x.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\heart_filled@2x.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\heart_filled.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\add.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\list.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.png

@@ -52,6 +52,16 @@ dotnet_bot.scale-125.png
 dotnet_bot.scale-150.png
 dotnet_bot.scale-200.png
 dotnet_bot.scale-400.png
+heart_filled.scale-100.png
+heart_filled.scale-125.png
+heart_filled.scale-150.png
+heart_filled.scale-200.png
+heart_filled.scale-400.png
+heart_outline.scale-100.png
+heart_outline.scale-125.png
+heart_outline.scale-150.png
+heart_outline.scale-200.png
+heart_outline.scale-400.png
 home.scale-100.png
 list.scale-100.png
 splashSplashScreen.scale-100.png
