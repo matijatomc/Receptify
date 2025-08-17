@@ -24,11 +24,20 @@ public partial class ShoppingListPage : ContentPage
     {
         await DatabaseService.Init();
         ShoppingItems.Clear();
-        var items = await DatabaseService.GetShoppingItemsAsync();
+        var items = await DatabaseService.GetShoppingListAsync();
         foreach (var item in items)
             ShoppingItems.Add(item);
         OnPropertyChanged(nameof(IsEmpty));
         OnPropertyChanged(nameof(IsNotEmpty));
+    }
+
+    private async void OnItemCheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+        if (sender is CheckBox cb && cb.BindingContext is ShoppingItem item)
+        {
+            item.IsChecked = e.Value;
+            await DatabaseService.UpdateShoppingItemAsync(item);
+        }
     }
 
     private async void OnDeleteCheckedClicked(object sender, EventArgs e)

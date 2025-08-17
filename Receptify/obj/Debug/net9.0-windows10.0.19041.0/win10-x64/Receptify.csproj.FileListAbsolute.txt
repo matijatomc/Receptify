@@ -475,8 +475,8 @@ C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-wind
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\splashSplashScreen.scale-400.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\OpenSans-Regular.ttf
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\OpenSans-Semibold.ttf
-C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\add.scale-100.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\home.scale-100.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\add.scale-100.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\list.scale-100.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\heart_outline.scale-400.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\heart_outline.scale-200.png
@@ -488,11 +488,6 @@ C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-wind
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\heart_filled.scale-150.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\heart_filled.scale-125.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\heart_filled.scale-100.png
-C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-400.png
-C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-200.png
-C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-150.png
-C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-125.png
-C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-100.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appiconLargeTile.scale-400.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appiconLargeTile.scale-200.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appiconLargeTile.scale-150.png
@@ -539,6 +534,11 @@ C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-wind
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appiconLogo.scale-125.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appiconLogo.scale-100.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appicon.ico
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-400.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-200.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-150.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-125.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-100.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\CoreMessagingXP.dll
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dcompi.dll
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dwmcorei.dll
@@ -878,8 +878,8 @@ C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-wind
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\mauifont.stamp
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf
-C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\add.scale-100.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-100.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\add.scale-100.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\list.scale-100.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\heart_outline.scale-400.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\heart_outline.scale-200.png
@@ -891,11 +891,6 @@ C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-wind
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\heart_filled.scale-150.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\heart_filled.scale-125.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\heart_filled.scale-100.png
-C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png
-C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png
-C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png
-C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png
-C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png
@@ -942,6 +937,11 @@ C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-wind
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\mauiimage.stamp
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\mauiimage.outputs
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\Receptify.AssemblyInfoInputs.cache

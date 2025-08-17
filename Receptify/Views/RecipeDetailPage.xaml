@@ -29,7 +29,7 @@
             <CollectionView ItemsSource="{Binding Ingredients}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Label Text="{Binding Text}" FontSize="14"/>
+                        <Label Text="{Binding DisplayText}" FontSize="14"/>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

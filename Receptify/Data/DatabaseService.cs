@@ -16,6 +16,7 @@ public static class DatabaseService
 
         await _database.CreateTableAsync<Recipe>();
         await _database.CreateTableAsync<Ingredient>();
+        await _database.CreateTableAsync<RecipeIngredient>();
         await _database.CreateTableAsync<Step>();
         await _database.CreateTableAsync<Tag>();
         await _database.CreateTableAsync<RecipeTag>();
@@ -68,6 +69,35 @@ public static class DatabaseService
         }
     }
 
+    public static async Task<Dictionary<int, List<string>>> GetRecipeIdToIngredientNamesAsync()
+    {
+        await Init();
+
+        var links = await _database.Table<RecipeIngredient>().ToListAsync();
+
+        var ingredients = await _database.Table<Ingredient>().ToListAsync();
+        var nameById = ingredients.ToDictionary(i => i.Id, i => i.Name ?? string.Empty);
+
+        var map = new Dictionary<int, List<string>>();
+        foreach (var ri in links)
+        {
+            if (!nameById.TryGetValue(ri.IngredientId, out var name) || string.IsNullOrWhiteSpace(name))
+                continue;
+
+            if (!map.TryGetValue(ri.RecipeId, out var list))
+            {
+                list = new List<string>();
+                map[ri.RecipeId] = list;
+            }
+
+            var lower = name.Trim().ToLowerInvariant();
+            if (!list.Contains(lower))
+                list.Add(lower);
+        }
+
+        return map;
+    }
+
     // -------------------- INGREDIENT --------------------
     public static async Task<int> AddIngredientAsync(Ingredient ingredient)
     {
@@ -75,20 +105,47 @@ public static class DatabaseService
         return await _database.InsertAsync(ingredient);
     }
 
-    public static async Task<List<Ingredient>> GetIngredientsByRecipeIdAsync(int recipeId)
+    public static async Task<List<Ingredient>> GetAllIngredientsAsync()
     {
         await Init();
-        return await _database.Table<Ingredient>().Where(i => i.RecipeId == recipeId).ToListAsync();
+        return await _database.Table<Ingredient>().OrderBy(i => i.Name).ToListAsync();
     }
 
-    public static async Task<int> DeleteIngredientsByRecipeIdAsync(int recipeId)
+    public static async Task<Ingredient> GetIngredientByIdAsync(int id)
     {
         await Init();
-        var ingredients = await GetIngredientsByRecipeIdAsync(recipeId);
+        return await _database.Table<Ingredient>().FirstOrDefaultAsync(i => i.Id == id);
+    }
+
+    public static async Task<int> UpdateIngredientAsync(Ingredient ingredient)
+    {
+        await Init();
+        return await _database.UpdateAsync(ingredient);
+    }
+
+    // -------------------- RECIPE INGREDIENT --------------------
+    public static async Task<int> AddRecipeIngredientAsync(RecipeIngredient ri)
+    {
+        await Init();
+        return await _database.InsertAsync(ri);
+    }
+
+    public static async Task<List<RecipeIngredient>> GetRecipeIngredientsAsync(int recipeId)
+    {
+        await Init();
+        return await _database.Table<RecipeIngredient>()
+            .Where(r => r.RecipeId == recipeId)
+            .ToListAsync();
+    }
+
+    public static async Task<int> DeleteRecipeIngredientsAsync(int recipeId)
+    {
+        await Init();
+        var ingredients = await GetRecipeIngredientsAsync(recipeId);
         int deleted = 0;
 
-        foreach (var ing in ingredients)
-            deleted += await _database.DeleteAsync(ing);
+        foreach (var ri in ingredients)
+            deleted += await _database.DeleteAsync(ri);
 
         return deleted;
     }
@@ -192,27 +249,42 @@ public static class DatabaseService
     }
 
     // -------------------- SHOPPING ITEM --------------------
+    public static async Task<ShoppingItem> GetShoppingItemByIngredientIdAsync(int ingredientId)
+    {
+        await Init();
+        return await _database.Table<ShoppingItem>()
+            .Where(s => s.IngredientId == ingredientId)
+            .FirstOrDefaultAsync();
+    }
+
     public static async Task<int> AddShoppingItemAsync(ShoppingItem item)
     {
         await Init();
         return await _database.InsertAsync(item);
     }
 
-    public static async Task<List<ShoppingItem>> GetShoppingItemsAsync()
+    public static async Task<int> UpdateShoppingItemAsync(ShoppingItem item)
+    {
+        await Init();
+        return await _database.UpdateAsync(item);
+    }
+
+    public static async Task<List<ShoppingItem>> GetShoppingListAsync()
     {
         await Init();
         return await _database.Table<ShoppingItem>().ToListAsync();
     }
 
-    public static async Task DeleteShoppingItemAsync(int id)
+    public static async Task<int> DeleteShoppingItemAsync(int id)
     {
         await Init();
-        await _database.DeleteAsync<ShoppingItem>(id);
+        return await _database.DeleteAsync<ShoppingItem>(id);
     }
 
-    public static async Task DeleteAllShoppingItemsAsync()
+    public static async Task<int> DeleteAllShoppingItemsAsync()
     {
         await Init();
-        await _database.ExecuteAsync("DELETE FROM ShoppingItem");
+        return await _database.DeleteAllAsync<ShoppingItem>();
     }
+
 }

@@ -6,13 +6,21 @@
 
     <VerticalStackLayout Padding="15" Spacing="10">
 
-        <CollectionView x:Name="ShoppingListView" ItemsSource="{Binding ShoppingItems}">
+        <CollectionView ItemsSource="{Binding ShoppingItems}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <HorizontalStackLayout>
-                        <CheckBox IsChecked="{Binding IsChecked}" />
-                        <Label Text="{Binding Text}" VerticalOptions="Center" />
-                    </HorizontalStackLayout>
+                    <Grid ColumnDefinitions="Auto, *" Padding="0,8">
+                        <CheckBox IsChecked="{Binding IsChecked}" CheckedChanged="OnItemCheckedChanged" />
+                        <Label Grid.Column="1" VerticalOptions="Center">
+                            <Label.Text>
+                                <MultiBinding StringFormat="{}{0} {1} {2}">
+                                    <Binding Path="Quantity" />
+                                    <Binding Path="Unit" />
+                                    <Binding Path="Name" />
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

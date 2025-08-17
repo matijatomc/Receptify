@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Receptify")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+b7134a9aeb8ae3ddd9655e5f81c22fcc113caa3e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+36f330504ddb368ac841a3434cdec888e29acf8b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Receptify")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Receptify")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

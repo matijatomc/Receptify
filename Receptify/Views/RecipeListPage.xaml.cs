@@ -13,6 +13,8 @@ public partial class RecipeListPage : ContentPage
     public ObservableCollection<TagItem> AllTags { get; set; } = new();
     public ObservableCollection<TagItem> EditableTags { get; set; } = new();
 
+    private Dictionary<int, List<string>> _ingredientsIndex = new();
+
     private List<TagItem> SelectedTags = new();
     private string selectedSortOption = "Bez sortiranja";
 
@@ -49,7 +51,6 @@ public partial class RecipeListPage : ContentPage
             }
         }
     }
-
 
     private async Task LoadDataAsync()
     {
@@ -104,20 +105,28 @@ public partial class RecipeListPage : ContentPage
             });
         }
 
+        _ingredientsIndex = await DatabaseService.GetRecipeIdToIngredientNamesAsync();
+
         ApplyFilters();
     }
 
     private void ApplyFilters()
     {
-        var query = SearchEntry.Text?.Trim().ToLower() ?? string.Empty;
-
+        var query = SearchEntry.Text?.Trim().ToLowerInvariant() ?? string.Empty;
         bool filterFavorites = SelectedTags.Any(t => t.Name == "★ Favoriti");
 
+        bool MatchesIngredient(RecipeDisplay r)
+        {
+            if (string.IsNullOrEmpty(query)) return true;
+            return _ingredientsIndex.TryGetValue(r.Id, out var names) && names.Any(n => n.Contains(query));
+        }
+
         var filtered = AllRecipes.Where(r =>
-            (string.IsNullOrWhiteSpace(query) || r.Title.ToLower().Contains(query)) &&
-            (!SelectedTags.Any(t => t.Name != "★ Favoriti") || SelectedTags.Where(t => t.Name != "★ Favoriti").All(tag => r.Tags.Contains(tag.Name))) &&
-            (!filterFavorites || r.IsFavorite)
+            (string.IsNullOrWhiteSpace(query) || r.Title.ToLowerInvariant().Contains(query) || MatchesIngredient(r))
+            && (!SelectedTags.Any(t => t.Name != "★ Favoriti") || SelectedTags.Where(t => t.Name != "★ Favoriti").All(tag => r.Tags.Contains(tag.Name)))
+            && (!filterFavorites || r.IsFavorite)
         );
+
 
         switch (selectedSortOption)
         {
@@ -184,6 +193,9 @@ public partial class RecipeListPage : ContentPage
         EditableTags.Clear();
         foreach (var tag in AllTags)
         {
+            if (tag.Id == -1)
+                continue;
+
             EditableTags.Add(new TagItem
             {
                 Id = tag.Id,

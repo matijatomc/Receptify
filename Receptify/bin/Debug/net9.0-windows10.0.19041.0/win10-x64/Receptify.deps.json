@@ -503,7 +503,7 @@
         "runtime": {
           "Microsoft.Maui.Controls.HotReload.Forms.dll": {
             "assemblyVersion": "17.0.0.0",
-            "fileVersion": "17.14.40353.11967"
+            "fileVersion": "17.14.40460.7212"
           }
         }
       },
@@ -511,7 +511,7 @@
         "runtime": {
           "Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll": {
             "assemblyVersion": "17.0.0.0",
-            "fileVersion": "17.14.40353.11967"
+            "fileVersion": "17.14.40460.7212"
           }
         }
       },
@@ -519,7 +519,7 @@
         "runtime": {
           "Microsoft.VisualStudio.DesignTools.TapContract.dll": {
             "assemblyVersion": "17.0.0.0",
-            "fileVersion": "17.14.40353.11967"
+            "fileVersion": "17.14.40460.7212"
           }
         }
       },
@@ -527,7 +527,7 @@
         "runtime": {
           "Microsoft.VisualStudio.DesignTools.XamlTapContract.dll": {
             "assemblyVersion": "17.0.0.0",
-            "fileVersion": "17.14.40353.11967"
+            "fileVersion": "17.14.40460.7212"
           }
         }
       },
