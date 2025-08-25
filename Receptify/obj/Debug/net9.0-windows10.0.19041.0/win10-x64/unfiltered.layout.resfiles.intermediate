@@ -47,6 +47,11 @@ appiconWideTile.scale-125.png
 appiconWideTile.scale-150.png
 appiconWideTile.scale-200.png
 appiconWideTile.scale-400.png
+clock.scale-100.png
+clock.scale-125.png
+clock.scale-150.png
+clock.scale-200.png
+clock.scale-400.png
 dotnet_bot.scale-100.png
 dotnet_bot.scale-125.png
 dotnet_bot.scale-150.png
@@ -64,6 +69,12 @@ heart_outline.scale-200.png
 heart_outline.scale-400.png
 home.scale-100.png
 list.scale-100.png
+shopping.scale-100.png
+star.scale-100.png
+star.scale-125.png
+star.scale-150.png
+star.scale-200.png
+star.scale-400.png
 splashSplashScreen.scale-100.png
 splashSplashScreen.scale-125.png
 splashSplashScreen.scale-150.png

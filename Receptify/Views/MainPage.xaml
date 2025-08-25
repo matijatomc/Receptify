@@ -2,80 +2,149 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Receptify.Views.MainPage"
-             Title="Receptify">
+             Title="Receptify"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             Shell.NavBarIsVisible="False">
 
-    <VerticalStackLayout Padding="20" Spacing="25" VerticalOptions="Center">
+    <ContentPage.Resources>
+        <Style x:Key="H1" TargetType="Label">
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+        </Style>
 
-        <Label Text="Dobrodošli u Receptify!" 
-               FontSize="28" 
-               HorizontalOptions="Center" />
+        <Style x:Key="SectionTitle" TargetType="Label">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+        </Style>
 
-        <Button Text="➕ Dodaj novi recept"
-                Clicked="OnAddRecipeClicked"
-                FontSize="18"
-                CornerRadius="12"
-                BackgroundColor="#4CAF50"
-                TextColor="White" />
+        <Style x:Key="SubtleText" TargetType="Label">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="TextColor" Value="#6B7280"/>
+        </Style>
 
-        <Button Text="📖 Prikaži sve recepte"
-                Clicked="OnViewRecipesClicked"
-                FontSize="18"
-                CornerRadius="12"
-                BackgroundColor="#2196F3"
-                TextColor="White" />
+        <Style x:Key="CardFrame" TargetType="Frame">
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="Padding" Value="16"/>
+            <Setter Property="Margin" Value="10,8"/>
+            <Setter Property="HasShadow" Value="True"/>
+            <Setter Property="BackgroundColor" Value="White"/>
+            <Setter Property="BorderColor" Value="#F1F1F1"/>
+        </Style>
 
-        <Button Text="🛒 Prikaži popis namirnica"
-                Clicked="OnViewShoppingListClicked"
-                FontSize="18"
-                CornerRadius="12"
-                BackgroundColor="#9C27B0"
-                TextColor="White" />
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="CornerRadius" Value="14"/>
+            <Setter Property="Padding" Value="16,12"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
 
-        <Label Text="Najdraži recepti" FontSize="20" FontAttributes="Bold" />
+        <Style x:Key="OutlineButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}"/>
+            <Setter Property="BorderColor" Value="{StaticResource PrimaryColor}"/>
+            <Setter Property="BorderWidth" Value="1"/>
+            <Setter Property="CornerRadius" Value="14"/>
+            <Setter Property="Padding" Value="16,12"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+    </ContentPage.Resources>
 
-        <Label Text="Nema spremljenih favorita."
-               Grid.Row="1"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               FontSize="16"
-               TextColor="Gray"
-               IsVisible="{Binding IsEmpty}" />
+    <ScrollView>
+        <VerticalStackLayout Padding="20,18" Spacing="12">
 
-        <CollectionView x:Name="FavoritePreviewCollection"
-                ItemsSource="{Binding FavoritePreview}"
-                SelectionMode="None"
-                HeightRequest="100">
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Horizontal" />
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Frame Margin="5" Padding="10" BorderColor="LightGray" CornerRadius="10" WidthRequest="150">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer 
-                        Command="{Binding Source={x:Reference FavoritePreviewCollection}, Path=BindingContext.FavoriteTappedCommand}"
-                        CommandParameter="{Binding}" />
-                        </Frame.GestureRecognizers>
+            <Label Text="Receptify" Style="{StaticResource H1}" />
+            <Label Text="Brzo dodaj recept, pregledaj kolekciju ili otvori popis namirnica."
+                   Style="{StaticResource SubtleText}" Margin="0,0,0,6"/>
 
-                        <VerticalStackLayout Spacing="5">
-                            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="16" LineBreakMode="TailTruncation"/>
-                            <Label Text="{Binding Rating, StringFormat='Ocjena: {0}/5'}" FontSize="14" />
-                            <Label Text="{Binding CookingTimeMinutes, Converter={StaticResource TimeConverter}}" FontSize="12" TextColor="Gray"/>
-                            <Label Text="{Binding TagList}" FontSize="10" TextColor="DarkSlateGray" LineBreakMode="WordWrap"/>
-                        </VerticalStackLayout>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+            <Frame Style="{StaticResource CardFrame}">
+                <VerticalStackLayout Spacing="10">
+                    <Button Text="➕ Dodaj novi recept"
+                            Style="{StaticResource PrimaryButton}"
+                            Clicked="OnAddRecipeClicked"/>
 
-        <Button Text="➤ Više favorita"
-                Clicked="OnViewAllFavoritesClicked"
-                FontSize="16"
-                BackgroundColor="#FF9800"
-                TextColor="White"
-                CornerRadius="12" 
-                IsVisible="{Binding IsNotEmpty}"/>
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <Button Text="📖 Prikaži sve recepte"
+                                Style="{StaticResource OutlineButton}"
+                                Clicked="OnViewRecipesClicked"
+                                Grid.Column="0"/>
+                        <Button Text="🛒 Popis namirnica"
+                                Style="{StaticResource OutlineButton}"
+                                Clicked="OnViewShoppingListClicked"
+                                Grid.Column="1"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
 
-    </VerticalStackLayout>
+            <Frame Style="{StaticResource CardFrame}">
+                <VerticalStackLayout Spacing="8">
+                    <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
+                        <Label Text="Najdraži recepti" Style="{StaticResource SectionTitle}" Grid.Column="0"/>
+                        <Button Text="Više"
+                                Style="{StaticResource OutlineButton}"
+                                FontSize="14"
+                                Padding="12,6"
+                                IsVisible="{Binding IsNotEmpty}"
+                                Clicked="OnViewAllFavoritesClicked"
+                                Grid.Column="1"/>
+                    </Grid>
 
+                    <VerticalStackLayout Spacing="6" Padding="0,4" IsVisible="{Binding IsEmpty}">
+                        <Label Text="Nema spremljenih favorita."
+                               FontSize="16"
+                               TextColor="Gray"
+                               HorizontalTextAlignment="Center"/>
+                        <Label Text="Označi srce na receptu da ga dodaš među najdraže."
+                               Style="{StaticResource SubtleText}"
+                               HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+
+                    <CollectionView x:Name="FavoritePreviewCollection"
+                                    ItemsSource="{Binding FavoritePreview}"
+                                    SelectionMode="None"
+                                    HeightRequest="140"
+                                    IsVisible="{Binding IsNotEmpty}">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="12" Margin="6,6,6,6"
+                                       CornerRadius="16" HasShadow="True"
+                                       BackgroundColor="White" BorderColor="#EEEEEE"
+                                       WidthRequest="180">
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding Source={x:Reference FavoritePreviewCollection}, Path=BindingContext.FavoriteTappedCommand}"
+                                            CommandParameter="{Binding}"/>
+                                    </Frame.GestureRecognizers>
+
+                                    <VerticalStackLayout Spacing="6">
+                                        <Label Text="{Binding Title}"
+                                               FontAttributes="Bold"
+                                               FontSize="16"
+                                               LineBreakMode="TailTruncation"/>
+                                        <Label Text="{Binding CookingTimeMinutes, Converter={StaticResource TimeConverter}}"
+                                               Style="{StaticResource SubtleText}"/>
+                                        <Label Text="{Binding Rating, StringFormat='Ocjena: {0}/5'}"
+                                               Style="{StaticResource SubtleText}"/>
+                                        <Label Text="{Binding TagList}"
+                                               FontSize="12"
+                                               TextColor="#374151"
+                                               LineBreakMode="WordWrap"
+                                               MaxLines="2"/>
+                                    </VerticalStackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </Frame>
+
+            <BoxView HeightRequest="12" Opacity="0"/>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

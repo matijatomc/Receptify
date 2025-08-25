@@ -22,8 +22,6 @@ public partial class RecipeListPage : ContentPage
     public ICommand ToggleTagCommand { get; }
     public ICommand ToggleFavoriteCommand { get; }
 
-    public bool IsEmpty => FilteredRecipes.Count == 0;
-
     private bool isFavoriteFilterRequested = false;
 
     public RecipeListPage()
@@ -153,8 +151,6 @@ public partial class RecipeListPage : ContentPage
         FilteredRecipes.Clear();
         foreach (var r in filtered)
             FilteredRecipes.Add(r);
-
-        OnPropertyChanged(nameof(IsEmpty));
     }
 
     private void OnSearchTextChanged(object sender, TextChangedEventArgs e)

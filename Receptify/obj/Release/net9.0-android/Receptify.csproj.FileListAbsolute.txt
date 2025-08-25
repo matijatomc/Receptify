@@ -468,3 +468,14 @@ C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-an
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-xhdpi\heart_filled.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-hdpi\heart_filled.png
 C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-mdpi\heart_filled.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-xxxhdpi\star.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-xxhdpi\star.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-xhdpi\star.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-hdpi\star.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-mdpi\star.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-xxxhdpi\clock.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-xxhdpi\clock.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-xhdpi\clock.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-hdpi\clock.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable-mdpi\clock.png
+C:\Users\tomcm\source\repos\matijatomc\Receptify\Receptify\obj\Release\net9.0-android\resizetizer\r\drawable\shopping.png

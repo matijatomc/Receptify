@@ -4,7 +4,13 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:Receptify.Views"
-    Title="Receptify">
+    Title="Receptify"
+    Shell.NavBarHasShadow="False"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarBackgroundColor="White"
+    Shell.TabBarForegroundColor="{StaticResource PrimaryColor}"
+    Shell.TabBarTitleColor="{StaticResource PrimaryColor}"
+    Shell.TabBarUnselectedColor="#9CA3AF">
 
     <TabBar>
         <ShellContent
@@ -27,10 +33,9 @@
 
         <ShellContent
             Title="Namirnice"
-            Icon="list.png"
+            Icon="shopping.png"
             ContentTemplate="{DataTemplate views:ShoppingListPage}"
             Route="shopping" />
     </TabBar>
-
 
 </Shell>

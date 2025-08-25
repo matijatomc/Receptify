@@ -12,6 +12,15 @@
             </ResourceDictionary.MergedDictionaries>
             <converters:BoolToColorConverter x:Key="BoolToColorConverter" />
             <converters:TimeConverter x:Key="TimeConverter" />
+            <Color x:Key="PrimaryColor">#FF7A00</Color>
+            <Color x:Key="SecondaryColor">#FFB266</Color>
+            <Color x:Key="BackgroundColor">#FAFAFA</Color>
+            <Color x:Key="TextColor">#333333</Color>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
