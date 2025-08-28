@@ -11,4 +11,6 @@ public class ShoppingItem
     public string Unit { get; set; }
     public double Quantity { get; set; }
     public bool IsChecked { get; set; }
+
+    public string DisplayText => $"{Quantity} {Unit} {Name}";
 }

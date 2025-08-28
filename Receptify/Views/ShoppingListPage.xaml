@@ -44,47 +44,34 @@
 
         <Label Text="Popis namirnica" Style="{StaticResource SectionTitle}" />
 
-        <Frame Style="{StaticResource CardFrame}" HasShadow="True" IsVisible="{Binding IsNotEmpty}">
-            <CollectionView ItemsSource="{Binding ShoppingItems}">
+        <Frame Style="{StaticResource CardFrame}" HasShadow="True">
+            <VerticalStackLayout Spacing="6" Padding="0,4">
 
-                <CollectionView.EmptyView>
-                    <VerticalStackLayout Spacing="8" Padding="24" HorizontalOptions="Center" VerticalOptions="Center">
-                        <Label Text="Nema dodanih namirnica."
-                           FontSize="16"
-                           TextColor="Gray"
-                           HorizontalTextAlignment="Center"
-                           Margin="0,8,0,0"/>
-                    </VerticalStackLayout>
-                </CollectionView.EmptyView>
-
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid ColumnDefinitions="Auto,*" Padding="0,8">
-                            <CheckBox IsChecked="{Binding IsChecked}"
-                                      CheckedChanged="OnItemCheckedChanged"
-                                      VerticalOptions="Center"/>
-                            <Label Grid.Column="1" VerticalOptions="Center">
-                                <Label.Text>
-                                    <MultiBinding StringFormat="{}{0} {1} {2}">
-                                        <Binding Path="Quantity"/>
-                                        <Binding Path="Unit"/>
-                                        <Binding Path="Name"/>
-                                    </MultiBinding>
-                                </Label.Text>
-                            </Label>
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </Frame>
-
-        <VerticalStackLayout IsVisible="{Binding IsEmpty}" Padding="16" HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="Nema dodanih namirnica."
+                <VerticalStackLayout Spacing="6" Padding="0,4"
+                             IsVisible="{Binding IsEmpty}">
+                    <Label Text="Nema dodanih namirnica."
                    FontSize="16"
                    TextColor="Gray"
-                   HorizontalTextAlignment="Center"
-                   Margin="0,8,0,0"/>
-        </VerticalStackLayout>
+                   HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+
+                <CollectionView ItemsSource="{Binding ShoppingItems}"
+                        IsVisible="{Binding IsNotEmpty}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="Auto,*" Padding="0,8">
+                                <CheckBox IsChecked="{Binding IsChecked}"
+                                  CheckedChanged="OnItemCheckedChanged"
+                                  VerticalOptions="Center"/>
+                                <Label Text="{Binding DisplayText}" Grid.Column="1" VerticalOptions="Center" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </VerticalStackLayout>
+        </Frame>
+
 
         <Grid ColumnDefinitions="*,*" ColumnSpacing="12" IsVisible="{Binding IsNotEmpty}">
             <Button Text="🗑 Izbriši označeno"

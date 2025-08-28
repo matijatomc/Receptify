@@ -5,6 +5,7 @@ namespace Receptify.Views;
 public partial class ShoppingListPage : ContentPage
 {
     public ObservableCollection<ShoppingItem> ShoppingItems { get; set; } = new();
+    public bool IsEmpty => ShoppingItems.Count == 0;
     public bool IsNotEmpty => ShoppingItems.Count != 0;
 
     public ShoppingListPage()
@@ -26,6 +27,7 @@ public partial class ShoppingListPage : ContentPage
         var items = await DatabaseService.GetShoppingListAsync();
         foreach (var item in items)
             ShoppingItems.Add(item);
+        OnPropertyChanged(nameof(IsEmpty));
         OnPropertyChanged(nameof(IsNotEmpty));
     }
 
@@ -50,6 +52,7 @@ public partial class ShoppingListPage : ContentPage
             ShoppingItems.Remove(item);
         }
 
+        OnPropertyChanged(nameof(IsEmpty));
         OnPropertyChanged(nameof(IsNotEmpty));
     }
 
@@ -62,6 +65,7 @@ public partial class ShoppingListPage : ContentPage
             ShoppingItems.Clear();
         }
 
+        OnPropertyChanged(nameof(IsEmpty));
         OnPropertyChanged(nameof(IsNotEmpty));
     }
 }
