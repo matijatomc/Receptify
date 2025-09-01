@@ -3,48 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\addrecipepage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\addrecipepage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\addrecipepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\addrecipepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\shoppinglistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\shoppinglistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\data\\shoppingitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\data\\shoppingitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\models\\ingredientitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\models\\ingredientitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\shoppinglistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\shoppinglistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\recipedetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\recipedetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\recipelistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\recipelistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\editrecipepage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\editrecipepage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\editrecipepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\editrecipepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\recipedetailpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\recipedetailpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\data\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\data\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\recipedetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\recipedetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\shoppinglistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\shoppinglistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|c:\\users\\tomcm\\source\\repos\\matijatomc\\receptify\\receptify\\views\\recipelistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B080E475-F06E-4AC6-8454-7720B112564A}|Receptify\\Receptify.csproj|solutionrelative:receptify\\views\\recipelistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,101 +50,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ShoppingListPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\ShoppingListPage.xaml.cs",
-              "RelativeDocumentMoniker": "Receptify\\Views\\ShoppingListPage.xaml.cs",
-              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\ShoppingListPage.xaml.cs",
-              "RelativeToolTip": "Receptify\\Views\\ShoppingListPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AddRecipePage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\AddRecipePage.xaml.cs",
+              "RelativeDocumentMoniker": "Receptify\\Views\\AddRecipePage.xaml.cs",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\AddRecipePage.xaml.cs",
+              "RelativeToolTip": "Receptify\\Views\\AddRecipePage.xaml.cs",
+              "ViewState": "AgIAAAcBAAAAAAAAAAAxwMABAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T20:08:52.053Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ShoppingListPage.xaml",
-              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\ShoppingListPage.xaml",
-              "RelativeDocumentMoniker": "Receptify\\Views\\ShoppingListPage.xaml",
-              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\ShoppingListPage.xaml",
-              "RelativeToolTip": "Receptify\\Views\\ShoppingListPage.xaml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAkwCgAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-27T22:03:54.398Z"
+              "WhenOpened": "2025-08-30T22:37:56.375Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ShoppingItem.cs",
-              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Data\\ShoppingItem.cs",
-              "RelativeDocumentMoniker": "Receptify\\Data\\ShoppingItem.cs",
-              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Data\\ShoppingItem.cs",
-              "RelativeToolTip": "Receptify\\Data\\ShoppingItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Title": "EditRecipePage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\EditRecipePage.xaml.cs",
+              "RelativeDocumentMoniker": "Receptify\\Views\\EditRecipePage.xaml.cs",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\EditRecipePage.xaml.cs",
+              "RelativeToolTip": "Receptify\\Views\\EditRecipePage.xaml.cs",
+              "ViewState": "AgIAAAYBAAAAAAAAAAAiwIIBAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T22:37:41.608Z"
+              "WhenOpened": "2025-08-30T22:30:05.246Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IngredientItem.cs",
-              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Models\\IngredientItem.cs",
-              "RelativeDocumentMoniker": "Receptify\\Models\\IngredientItem.cs",
-              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Models\\IngredientItem.cs",
-              "RelativeToolTip": "Receptify\\Models\\IngredientItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABBAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "RecipeDetailPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeDetailPage.xaml.cs",
+              "RelativeDocumentMoniker": "Receptify\\Views\\RecipeDetailPage.xaml.cs",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeDetailPage.xaml.cs",
+              "RelativeToolTip": "Receptify\\Views\\RecipeDetailPage.xaml.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAD4v4cAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T22:37:48.849Z"
+              "WhenOpened": "2025-08-30T22:19:21.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DatabaseService.cs",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Data\\DatabaseService.cs",
+              "RelativeDocumentMoniker": "Receptify\\Data\\DatabaseService.cs",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Data\\DatabaseService.cs",
+              "RelativeToolTip": "Receptify\\Data\\DatabaseService.cs",
+              "ViewState": "AgIAAH4AAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-30T22:18:02.101Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Receptify\\Views\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\MainPage.xaml",
+              "RelativeToolTip": "Receptify\\Views\\MainPage.xaml",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAkwIgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-30T22:04:05.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "RecipeListPage.xaml",
               "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeListPage.xaml",
               "RelativeDocumentMoniker": "Receptify\\Views\\RecipeListPage.xaml",
               "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeListPage.xaml",
               "RelativeToolTip": "Receptify\\Views\\RecipeListPage.xaml",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAwwIEAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAkwJ8AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-27T22:02:13.236Z"
+              "WhenOpened": "2025-08-27T22:02:13.236Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RecipeDetailPage.xaml",
-              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeDetailPage.xaml",
-              "RelativeDocumentMoniker": "Receptify\\Views\\RecipeDetailPage.xaml",
-              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeDetailPage.xaml",
-              "RelativeToolTip": "Receptify\\Views\\RecipeDetailPage.xaml",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAG8AAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-27T22:01:16.394Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EditRecipePage.xaml",
-              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\EditRecipePage.xaml",
-              "RelativeDocumentMoniker": "Receptify\\Views\\EditRecipePage.xaml",
-              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\EditRecipePage.xaml",
-              "RelativeToolTip": "Receptify\\Views\\EditRecipePage.xaml",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFYAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-27T21:58:36.019Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AddRecipePage.xaml",
               "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\AddRecipePage.xaml",
               "RelativeDocumentMoniker": "Receptify\\Views\\AddRecipePage.xaml",
               "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\AddRecipePage.xaml",
               "RelativeToolTip": "Receptify\\Views\\AddRecipePage.xaml",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAIwIoAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAwwHsAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-08-27T21:57:55.81Z",
               "EditorCaption": ""
@@ -156,39 +146,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\App.xaml",
-              "RelativeDocumentMoniker": "Receptify\\App.xaml",
-              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\App.xaml",
-              "RelativeToolTip": "Receptify\\App.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Title": "ShoppingListPage.xaml",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\ShoppingListPage.xaml",
+              "RelativeDocumentMoniker": "Receptify\\Views\\ShoppingListPage.xaml",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\ShoppingListPage.xaml",
+              "RelativeToolTip": "Receptify\\Views\\ShoppingListPage.xaml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAkwE8AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-27T21:57:15.323Z",
+              "WhenOpened": "2025-08-27T22:03:54.398Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\AppShell.xaml",
-              "RelativeDocumentMoniker": "Receptify\\AppShell.xaml",
-              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\AppShell.xaml",
-              "RelativeToolTip": "Receptify\\AppShell.xaml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAbAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "RecipeDetailPage.xaml",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeDetailPage.xaml",
+              "RelativeDocumentMoniker": "Receptify\\Views\\RecipeDetailPage.xaml",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeDetailPage.xaml",
+              "RelativeToolTip": "Receptify\\Views\\RecipeDetailPage.xaml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAkwFYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-27T21:53:15.343Z"
+              "WhenOpened": "2025-08-27T22:01:16.394Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "RecipeDetailPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeDetailPage.xaml.cs",
-              "RelativeDocumentMoniker": "Receptify\\Views\\RecipeDetailPage.xaml.cs",
-              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\RecipeDetailPage.xaml.cs",
-              "RelativeToolTip": "Receptify\\Views\\RecipeDetailPage.xaml.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAswHQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T21:48:35.895Z"
+              "DocumentIndex": 3,
+              "Title": "EditRecipePage.xaml",
+              "DocumentMoniker": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\EditRecipePage.xaml",
+              "RelativeDocumentMoniker": "Receptify\\Views\\EditRecipePage.xaml",
+              "ToolTip": "C:\\Users\\tomcm\\source\\repos\\matijatomc\\Receptify\\Receptify\\Views\\EditRecipePage.xaml",
+              "RelativeToolTip": "Receptify\\Views\\EditRecipePage.xaml",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAE4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-27T21:58:36.019Z",
+              "EditorCaption": ""
             }
           ]
         }

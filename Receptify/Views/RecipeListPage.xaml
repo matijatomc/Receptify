@@ -57,7 +57,6 @@
 
             <Frame HasShadow="False" CornerRadius="14" Padding="10" BackgroundColor="White" Margin="0,0,0,2">
                 <Grid ColumnDefinitions="Auto,*">
-                    <Image Source="search.png" HeightRequest="18" WidthRequest="18" Margin="6,0"/>
                     <SearchBar x:Name="SearchEntry"
                                TextColor="{StaticResource TextColor}"
                                Grid.Column="1"
@@ -104,6 +103,7 @@
                     <Frame HasShadow="False" CornerRadius="12" Padding="8,2" BackgroundColor="White">
                         <HorizontalStackLayout Spacing="8">
                             <Picker x:Name="SortPicker"
+                                    TextColor="{StaticResource TextColor}"
                                     Title="Sortiraj"
                                     SelectedIndexChanged="OnSortOptionChanged">
                                 <Picker.ItemsSource>
